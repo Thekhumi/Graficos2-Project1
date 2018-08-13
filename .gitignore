@@ -26,3 +26,11 @@
 *.exe
 *.out
 *.app
+
+*.ipch
+
+TestEngine/\.vs/
+
+TestEngine/EngineDLL/Debug/
+
+TestEngine/TestEngine/Debug/
