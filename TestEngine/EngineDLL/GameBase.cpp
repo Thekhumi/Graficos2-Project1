@@ -6,8 +6,17 @@ GameBase::GameBase():_renderer(new Rendering()){
 }
 
 bool GameBase::start() {
-	cout << "GameBaseStart->";
-	if (!_renderer->start()) {
+	cout << "-GameBaseStart-";
+	
+	_window = new Window();
+
+	if (!_window->start(640,480,"Cyberpunk2077")) {
+		return false;
+	}
+	
+	_renderer = new Rendering();
+
+	if (!_renderer->start(_window)) {
 		return false;
 	}
 	return onStart();
@@ -15,15 +24,20 @@ bool GameBase::start() {
 
 bool GameBase::stop() {
 	onStop();
+	_window->stop();
 	_renderer->stop();
-	cout << "GameBaseStop->";
-	return true;
+	cout << "-GameBaseStop-";
+	return onStop();
 }
 
 void GameBase::loop() {
 	_update = true;
-	while (_update) {
+	_renderer->clearColor(0.0f,1.0f,0.5f,0.4f);
+	while (_update && !_window->shouldClose()) {
 		_update = onUpdate();
+		_window->pollEvents();
+		_renderer->clear();
+		_renderer->swapBuffer();
 	}
 }
 

@@ -13,21 +13,20 @@ Game::~Game()
 }
 
 bool Game::onStart() {
-	cout << "OnStart->";
+	cout << "-OnStart-";
 	_pepito = 0;
 	return true;
 }
 
 bool Game::onUpdate() {
-	_pepito++;
-	cout << "Hay " << _pepito << " pepitos."<< endl;
-	if (_pepito >= 100) {
-		return false;
+	if(_pepito < 3000) {
+		_pepito++;
+		cout << endl << "Hay " << _pepito << " pepitos." << endl;
 	}
 	return true;
 }
 
 bool Game::onStop() {
-	cout << "OnStop->";
+	cout << "-OnStop-";
 	return true;
 }

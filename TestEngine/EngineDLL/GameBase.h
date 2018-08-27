@@ -1,10 +1,13 @@
 #pragma once
+#include "TypeDef.h"
 #include "Exports.h"
 #include "Rendering.h"
+#include "Window.h"
 class ENGINEDLL_API GameBase
 {
 private:
 	Rendering * _renderer;
+	Window * _window;
 	bool _start;
 	bool _stop;
 	bool _update;

@@ -1,0 +1,12 @@
+﻿  Rendering.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Generando código...
+  Compilando...
+  GameBase.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Generando código...
+     Creando biblioteca C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.lib y objeto C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.exp
+LINK : warning LNK4098: la biblioteca predeterminada'MSVCRT' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+  EngineDLL.vcxproj -> C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.dll
