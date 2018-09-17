@@ -1,0 +1,22 @@
+﻿  Entity.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  GameBase.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Rendering.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Triangle.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     Creando biblioteca C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Release\EngineDLL.lib y objeto C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Release\EngineDLL.exp
+Rendering.obj : error LNK2001: símbolo externo __imp___glewEnableVertexAttribArray sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewBindVertexArray sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewVertexAttribPointer sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewBindBuffer sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewBufferData sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewGenVertexArrays sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewDisableVertexAttribArray sin resolver
+Rendering.obj : error LNK2001: símbolo externo __imp___glewGenBuffers sin resolver
+C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Release\EngineDLL.dll : fatal error LNK1120: 8 externos sin resolver

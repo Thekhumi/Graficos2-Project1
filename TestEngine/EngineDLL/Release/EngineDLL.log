@@ -1,0 +1,14 @@
+﻿  Entity.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  GameBase.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Rendering.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Triangle.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+     Creando biblioteca C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\Release\EngineDLL.lib y objeto C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\Release\EngineDLL.exp
+LINK : fatal error LNK1561: se debe definir el punto de entrada

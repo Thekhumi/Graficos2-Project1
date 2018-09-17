@@ -27,7 +27,7 @@ bool GameBase::stop() {
 	_window->stop();
 	_renderer->stop();
 	cout << "-GameBaseStop-";
-	return onStop();
+	return true;
 }
 
 void GameBase::loop() {
@@ -37,6 +37,7 @@ void GameBase::loop() {
 		_update = onUpdate();
 		_window->pollEvents();
 		_renderer->clear();
+		onDraw();
 		_renderer->swapBuffer();
 	}
 }

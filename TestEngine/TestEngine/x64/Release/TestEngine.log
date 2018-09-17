@@ -1,0 +1,12 @@
+﻿  Game.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  main.cpp
+c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+  Generando código
+  7 of 19 functions (36.8%) were compiled, the rest were copied from previous compilation.
+    2 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Generación de código finalizada
+  TestEngine.vcxproj -> C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Release\TestEngine.exe
