@@ -10,7 +10,7 @@ bool GameBase::start() {
 	
 	_window = new Window();
 
-	if (!_window->start(640,480,"Cyberpunk2077")) {
+	if (!_window->start(640,640,"Cyberpunk2077")) {
 		return false;
 	}
 	

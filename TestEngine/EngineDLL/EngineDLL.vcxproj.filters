@@ -39,6 +39,12 @@
     <ClInclude Include="Material.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Square.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Shape.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameBase.cpp">
@@ -59,13 +65,19 @@
     <ClCompile Include="Material.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Square.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Shape.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Fragment Shader.txt">
+    <None Include="..\TestEngine\SimpleFragmentShader.fragmentshader">
       <Filter>Archivos de recursos</Filter>
-    </Text>
-    <Text Include="..\Vertex Shader.txt">
+    </None>
+    <None Include="..\TestEngine\SimpleVertexShader.vertexshader">
       <Filter>Archivos de recursos</Filter>
-    </Text>
+    </None>
   </ItemGroup>
 </Project>

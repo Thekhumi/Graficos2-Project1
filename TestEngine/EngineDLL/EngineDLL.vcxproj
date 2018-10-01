@@ -24,6 +24,8 @@
     <ClInclude Include="Exports.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Rendering.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="Square.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="TypeDef.h" />
     <ClInclude Include="Window.h" />
@@ -33,12 +35,14 @@
     <ClCompile Include="GameBase.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Rendering.cpp" />
+    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Square.cpp" />
     <ClCompile Include="Triangle.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <Text Include="..\Fragment Shader.txt" />
-    <Text Include="..\Vertex Shader.txt" />
+    <None Include="..\TestEngine\SimpleFragmentShader.fragmentshader" />
+    <None Include="..\TestEngine\SimpleVertexShader.vertexshader" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

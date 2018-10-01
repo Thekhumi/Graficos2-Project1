@@ -4,10 +4,13 @@ c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(
   main.cpp
 c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\Window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
   C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: __thiscall Triangle::~Triangle(void)" (__imp_??1Triangle@@QAE@XZ) sin resolver
+Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: void __thiscall Triangle::setMaterial(class Material *)" (__imp_?setMaterial@Triangle@@QAEXPAVMaterial@@@Z) sin resolver
 Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: __thiscall Triangle::Triangle(class Rendering *)" (__imp_??0Triangle@@QAE@PAVRendering@@@Z) sin resolver
 Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: __thiscall GameBase::~GameBase(void)" (__imp_??1GameBase@@QAE@XZ) sin resolver
 Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: __thiscall GameBase::GameBase(void)" (__imp_??0GameBase@@QAE@XZ) sin resolver
+Game.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: static class Material * __cdecl Material::loadMaterial(char const *,char const *)" (__imp_?loadMaterial@Material@@SAPAV1@PBD0@Z) sin resolver
 main.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: void __thiscall GameBase::loop(void)" (__imp_?loop@GameBase@@QAEXXZ) sin resolver
 main.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: bool __thiscall GameBase::stop(void)" (__imp_?stop@GameBase@@QAE_NXZ) sin resolver
 main.obj : error LNK2001: símbolo externo "__declspec(dllimport) public: bool __thiscall GameBase::start(void)" (__imp_?start@GameBase@@QAE_NXZ) sin resolver
-C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\Release\TestEngine.exe : fatal error LNK1120: 6 externos sin resolver
+C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\Release\TestEngine.exe : fatal error LNK1120: 9 externos sin resolver

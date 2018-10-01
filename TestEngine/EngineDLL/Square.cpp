@@ -1,20 +1,20 @@
-#include "Triangle.h"
+#include "Square.h"
 
 
 
-Triangle::Triangle(Rendering* renderer) :Shape(renderer),_vertex(NULL),_bufferID(-1)
-{
-	
-	_vertex = new float[9]{
+Square::Square(Rendering* renderer) :Shape(renderer), _vertex(NULL), _bufferID(-1){
+	_vertex = new float[12]{
+		-0.5f,-0.5f,0.0f,
 		-0.5f,0.0f,0.0f,
+		0.5f,-0.5f,0.0f,
 		0.5f,0.0f,0.0f,
-		0.0f,0.5f,0.0f
+		
 	};
 	_shouldDispose = false;
-	setVertices(_vertex, 3);
+	setVertices(_vertex,4);
 }
 
-void Triangle::setVertices(float* vertex, int vtxcount) {
+void Square::setVertices(float* vertex, int vtxcount) {
 	if (_shouldDispose) {
 		dispose();
 	}
@@ -25,7 +25,10 @@ void Triangle::setVertices(float* vertex, int vtxcount) {
 	_bufferID = _renderer->genBuffer(_vertex, sizeof(float) * vtxcount * 3);
 }
 
-void Triangle::Draw() {
+
+
+void Square::Draw() {
+
 	if (_shouldDispose) {
 		_renderer->loadMatrix();
 		_renderer->setMatrix(_modelMat);
@@ -34,8 +37,9 @@ void Triangle::Draw() {
 			_material->bind();
 			_material->setMatrixProperty(_renderer->getMVP());
 		}
-		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLES);
+		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLE_STRIP);
 	}
 }
-Triangle::~Triangle(){
+
+Square::~Square(){
 }

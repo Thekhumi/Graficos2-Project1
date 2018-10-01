@@ -21,6 +21,16 @@ bool Rendering::start(Window* window) {
 
 	glGenVertexArrays(1, &_VertexArrayID);
 	glBindVertexArray(_VertexArrayID);
+
+	_view = glm::lookAt(
+		glm::vec3(0, 0, 3),
+		glm::vec3(0, 0, 0),
+		glm::vec3(0, 1, 0))
+		;
+	_projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
+	_model = glm::mat4(1);
+	updateMVP();
+
 	return true;
 }
 
@@ -54,7 +64,7 @@ bool Rendering::stop() {
 	cout << "-RendStop-";
 	return true;
 }
-void Rendering::Draw(int bufferID, int size) {
+void Rendering::Draw(int bufferID, int size, int type) {
 	// 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
@@ -67,9 +77,27 @@ void Rendering::Draw(int bufferID, int size) {
 		(void*)0            // array buffer offset
 	);
 	// Draw the triangle !
-	glDrawArrays(GL_TRIANGLES, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
+	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
 	glDisableVertexAttribArray(0);
 }
+
+void Rendering::updateMVP() {
+	_mvp = _projection * _view * _model;
+}
+
+void Rendering::loadMatrix() {
+	_model = glm::mat4(1.0f);
+	updateMVP();
+}
+void Rendering::setMatrix(glm::mat4 model) {
+	_model = model;
+	updateMVP();
+}
+void Rendering::multiplyMatrix(glm::mat4 model) {
+	_model *= model;
+	updateMVP();
+}
+
 
 Rendering::~Rendering()
 {

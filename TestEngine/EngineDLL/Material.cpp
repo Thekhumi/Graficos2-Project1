@@ -16,6 +16,7 @@ Material::Material(unsigned int programID):_programID(programID){
 void Material::bind() 
 { 
 	glUseProgram(_programID); 
+	_matrixID = glGetUniformLocation(_programID, "MVP");
 }
 
 Material * Material::loadMaterial(const char * vertex_file_path, const char * fragment_file_path) {
@@ -120,7 +121,10 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 	return true;
 }
 
-
+void Material::setMatrixProperty( glm::mat4& mat) {
+	_matrixID = glGetUniformLocation(_programID, "MVP");
+	glUniformMatrix4fv(_matrixID, 1, GL_FALSE, &mat[0][0]);
+}
 Material::~Material()
 {
 }

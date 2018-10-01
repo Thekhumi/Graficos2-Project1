@@ -12,7 +12,7 @@ private:
 	static bool loadShader(const char * vertex_file_path, const char * fragment_file_path, unsigned int & programID);
 public:
 	static Material * loadMaterial(const char * vertex_file_path, const char * fragment_file_path);
-	void setMatrixProperty(const char* name, glm::mat4& mat);
+	void setMatrixProperty(glm::mat4& mat);
 
 	void bind();
 

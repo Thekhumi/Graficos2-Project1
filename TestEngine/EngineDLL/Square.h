@@ -1,6 +1,6 @@
 #pragma once
 #include "Shape.h"
-class ENGINEDLL_API Triangle :
+class ENGINEDLL_API Square :
 	public Shape
 {
 private:
@@ -8,10 +8,9 @@ private:
 	int _vtxCount;
 	unsigned int _bufferID = -1;
 public:
-	Triangle(Rendering *renderer);
+	Square(Rendering *renderer);
 	void setVertices(float* vertex, int vtxCount);
 	void Draw() override;
-
-	~Triangle();
+	~Square();
 };
 
