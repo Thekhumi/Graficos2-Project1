@@ -1,20 +1,147 @@
-﻿  Triangle.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  Rendering.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  Material.cpp
+﻿  Entity.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(12): warning C4251: 'Entity::_position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(13): warning C4251: 'Entity::_rotation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(14): warning C4251: 'Entity::_scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(16): warning C4251: 'Entity::_modelMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(18): warning C4251: 'Entity::_translateMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(19): warning C4251: 'Entity::_rotateXMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(20): warning C4251: 'Entity::_rotateYMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(21): warning C4251: 'Entity::_rotateZMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(22): warning C4251: 'Entity::_scaleMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
   GameBase.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Material.cpp
+  Rendering.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Shape.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(12): warning C4251: 'Entity::_position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(13): warning C4251: 'Entity::_rotation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(14): warning C4251: 'Entity::_scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(16): warning C4251: 'Entity::_modelMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(18): warning C4251: 'Entity::_translateMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(19): warning C4251: 'Entity::_rotateXMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(20): warning C4251: 'Entity::_rotateYMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(21): warning C4251: 'Entity::_rotateZMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(22): warning C4251: 'Entity::_scaleMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Square.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(12): warning C4251: 'Entity::_position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(13): warning C4251: 'Entity::_rotation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(14): warning C4251: 'Entity::_scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(16): warning C4251: 'Entity::_modelMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(18): warning C4251: 'Entity::_translateMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(19): warning C4251: 'Entity::_rotateXMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(20): warning C4251: 'Entity::_rotateYMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(21): warning C4251: 'Entity::_rotateZMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(22): warning C4251: 'Entity::_scaleMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Triangle.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(12): warning C4251: 'Entity::_position': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(13): warning C4251: 'Entity::_rotation': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(14): warning C4251: 'Entity::_scale': struct 'glm::vec<3,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_vec.hpp(229): note: vea la declaración de 'glm::vec<3,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(16): warning C4251: 'Entity::_modelMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(18): warning C4251: 'Entity::_translateMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(19): warning C4251: 'Entity::_rotateXMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(20): warning C4251: 'Entity::_rotateYMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(21): warning C4251: 'Entity::_rotateZMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(22): warning C4251: 'Entity::_scaleMat': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Entity'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Window.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
   Generando código...
-  Compilando...
-  Entity.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  Generando código...
-     Creando biblioteca C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.lib y objeto C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.exp
+     Creando biblioteca C:\Users\Norberto\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.lib y objeto C:\Users\Norberto\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.exp
 MSVCRTD.lib(initializers.obj) : warning LNK4098: la biblioteca predeterminada'msvcrt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
 Material.obj : error LNK2001: símbolo externo __imp___glewAttachShader sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewCompileShader sin resolver
@@ -26,8 +153,10 @@ Material.obj : error LNK2001: símbolo externo __imp___glewGetProgramInfoLog sin
 Material.obj : error LNK2001: símbolo externo __imp___glewGetProgramiv sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewGetShaderInfoLog sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewGetShaderiv sin resolver
+Material.obj : error LNK2001: símbolo externo __imp___glewGetUniformLocation sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewLinkProgram sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewShaderSource sin resolver
+Material.obj : error LNK2001: símbolo externo __imp___glewUniformMatrix4fv sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewUseProgram sin resolver
 Rendering.obj : error LNK2019: símbolo externo __imp_glewInit sin resolver al que se hace referencia en la función "public: bool __cdecl Rendering::start(class Window *)" (?start@Rendering@@QEAA_NPEAVWindow@@@Z)
 Rendering.obj : error LNK2001: símbolo externo __imp___glewBindBuffer sin resolver
@@ -40,4 +169,4 @@ Rendering.obj : error LNK2001: símbolo externo __imp___glewVertexAttribPointer 
 Rendering.obj : error LNK2001: símbolo externo __imp___glewBindVertexArray sin resolver
 Rendering.obj : error LNK2001: símbolo externo __imp___glewGenVertexArrays sin resolver
 ..\deps\glew-2.1.0\lib\Release\Win32\glew32.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.dll : fatal error LNK1120: 23 externos sin resolver
+C:\Users\Norberto\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.dll : fatal error LNK1120: 25 externos sin resolver

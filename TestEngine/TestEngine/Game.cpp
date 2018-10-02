@@ -27,11 +27,11 @@ bool Game::onStart() {
 	return true;
 }
 
-bool Game::onUpdate() {
+bool Game::onUpdate(double deltaTime) {
 	if(_pepito < 3000) {
 		_pepito++;
 		cout << endl << "Hay " << _pepito << " pepitos." << endl;
-		_vel += 0.1f;
+		_vel +=  1 * deltaTime;
 		triangle->setRotZ(_vel);
 		square->setRotZ(_vel);
 	}

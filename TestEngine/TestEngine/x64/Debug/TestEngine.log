@@ -1,8 +1,25 @@
-﻿  main.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
-  Game.cpp
-c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
-  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+﻿  Game.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(4): fatal error C1083: No se puede abrir el archivo incluir: 'gl\glew.h': No such file or directory
+  main.cpp
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
+  c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.13.26128\include\xstring(4273): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(16): warning C4251: 'Rendering::_model': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(17): warning C4251: 'Rendering::_view': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(18): warning C4251: 'Rendering::_projection': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
+  c:\users\norberto\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+c:\users\norberto\desktop\graficos2-project1\testengine\enginedll\entity.h(4): fatal error C1083: No se puede abrir el archivo incluir: 'gl\glew.h': No such file or directory
   Generando código...
-  TestEngine.vcxproj -> C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\TestEngine.exe

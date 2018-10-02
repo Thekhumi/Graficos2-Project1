@@ -31,10 +31,17 @@ bool GameBase::stop() {
 }
 
 void GameBase::loop() {
+	double timer = 0;
+	double deltaTime = 0;
+	double lastTime = 0;
+	timer = lastTime = glfwGetTime();
 	_update = true;
 	_renderer->clearColor(0.0f,1.0f,0.5f,0.4f);
 	while (_update && !_window->shouldClose()) {
-		_update = onUpdate();
+		timer = glfwGetTime();
+		deltaTime = timer - lastTime;
+		lastTime = timer;
+		_update = onUpdate(deltaTime);
 		_window->pollEvents();
 		_renderer->clear();
 		onDraw();
