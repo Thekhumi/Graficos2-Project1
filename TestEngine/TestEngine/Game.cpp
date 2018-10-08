@@ -24,6 +24,10 @@ bool Game::onStart() {
 	triangle->setScale(6, 6, 6);
 	_pepito = 0;
 	_vel = 0;
+	unsigned int test = TextureImporter::loadBMP("image.bmp");
+	if (test) {
+		cout << "Funciona!";
+	}
 	return true;
 }
 

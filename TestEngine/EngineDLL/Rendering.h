@@ -35,6 +35,7 @@ public:
 	void loadMatrix();
 	void setMatrix(glm::mat4 model);
 	void multiplyMatrix(glm::mat4 model);
+	static  unsigned int genTexture(unsigned int width, unsigned int height, unsigned char * data);
 	glm::mat4& getMVP() {
 		return _mvp;
 	}
