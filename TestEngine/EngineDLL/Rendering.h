@@ -31,7 +31,7 @@ public:
 	void swapBuffer();
 	unsigned int  genBuffer(float* vertex, int size);
 	void destroyBuffer(unsigned int bufferID);
-	void Draw(int bufferID, int size,int type);
+	void Draw(int bufferID, int size,int type, int attribSize);
 	void loadMatrix();
 	void setMatrix(glm::mat4 model);
 	void multiplyMatrix(glm::mat4 model);

@@ -7,7 +7,7 @@
 TextureImporter::TextureImporter(){
 }
 
-unsigned int TextureImporter::loadBMP(const char * imagepath) {
+Texture * TextureImporter::loadBMP(const char * imagepath) {
 	// Lectura de información del encabezado del archivo
 	unsigned char header[54]; // Each BMP file begins by a 54-bytes header
 	unsigned int dataPos;     // Position in the file where the actual data begins
@@ -15,22 +15,24 @@ unsigned int TextureImporter::loadBMP(const char * imagepath) {
 	unsigned int imageSize;   // = width*height*3
 	unsigned char * data;
 	FILE * file = NULL;
-	if (fopen_s(&file, imagepath, "rb") != 0) { printf("Image could not be opened\n"); return 0; }
+	if (fopen_s(&file, imagepath, "rb") != 0) { 
+		printf("Image could not be opened\n"); 
+	}
 
 	if (fread_s(header, 54,  1, 54, file) != 54) { // If not 54 bytes read : problem
 		printf("Not a correct BMP file\n");
-		return false;
 	}
 
 	if (header[0] != 'B' || header[1] != 'M') {
 		printf("Not a correct BMP file\n");
-		return 0;
 	}
 
 	dataPos = *(int*)&(header[0x0A]); //10
 	width = *(int*)&(header[0x12]); //18
 	height = *(int*)&(header[0x16]); //22
 	imageSize = *(int*)&(header[0x22]); //34
+
+	
 
 	// Checkeo de formato BMP
 	if (imageSize == 0)    imageSize = width * height * 3; // 3 : RED GREEN BLUE
@@ -47,7 +49,8 @@ unsigned int TextureImporter::loadBMP(const char * imagepath) {
 
 	// Se Crea una textura OpenGL
 	unsigned int textureID = Rendering::genTexture(width,height,data);
-	return textureID;
+	Texture  * texture = new Texture(width,height,textureID);
+	return texture;
 }
 
 

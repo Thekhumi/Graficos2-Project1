@@ -3,6 +3,7 @@
 class ENGINEDLL_API Square :
 	public Shape
 {
+
 private:
 	float*_vertex;
 	int _vtxCount;

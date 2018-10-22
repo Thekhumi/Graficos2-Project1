@@ -34,7 +34,7 @@ void Triangle::Draw() {
 			_material->bind();
 			_material->setMatrixProperty(_renderer->getMVP());
 		}
-		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLES);
+		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLES,3);
 	}
 }
 Triangle::~Triangle(){

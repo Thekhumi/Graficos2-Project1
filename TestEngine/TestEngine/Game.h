@@ -2,6 +2,7 @@
 #include "GameBase.h"
 #include "Triangle.h"
 #include "Square.h"
+#include "Sprite.h"
 #include "TextureImporter.h"
 class Game : public GameBase
 {
@@ -9,6 +10,7 @@ private:
 	int _pepito;
 	Triangle * triangle;
 	Square * square;
+	Sprite * sprite;
 	float _vel;
 	float _rot;
 	float _pos;

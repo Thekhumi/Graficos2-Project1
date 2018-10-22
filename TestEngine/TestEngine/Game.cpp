@@ -24,10 +24,8 @@ bool Game::onStart() {
 	triangle->setScale(6, 6, 6);
 	_pepito = 0;
 	_vel = 0;
-	unsigned int test = TextureImporter::loadBMP("image.bmp");
-	if (test) {
-		cout << "Funciona!";
-	}
+	sprite = new Sprite(_renderer, "image.bmp");
+	sprite->setMaterial(mat);
 	return true;
 }
 
@@ -45,6 +43,7 @@ bool Game::onUpdate(double deltaTime) {
 void Game::onDraw() {
 	square->Draw();
 	triangle->Draw();
+	sprite->Draw();
 }
 
 bool Game::onStop() {

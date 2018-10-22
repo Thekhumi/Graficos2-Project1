@@ -1,10 +1,11 @@
 #pragma once
 #include "Exports.h"
+#include "Texture.h"
 class ENGINEDLL_API TextureImporter
 {
 public:
 	TextureImporter();
-	static unsigned int  loadBMP(const char * imagepath);
+	static Texture* loadBMP(const char * imagepath);
 	~TextureImporter();
 };
 

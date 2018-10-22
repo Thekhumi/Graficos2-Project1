@@ -78,13 +78,13 @@ bool Rendering::stop() {
 	cout << "-RendStop-";
 	return true;
 }
-void Rendering::Draw(int bufferID, int size, int type) {
+void Rendering::Draw(int bufferID, int size, int type,int attribSize) {
 	// 1st attribute buffer : vertices
 	glEnableVertexAttribArray(0);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
 	glVertexAttribPointer(
 		0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
-		3,                  // size
+		attribSize,         // size
 		GL_FLOAT,           // type
 		GL_FALSE,           // normalized?
 		0,                  // stride
