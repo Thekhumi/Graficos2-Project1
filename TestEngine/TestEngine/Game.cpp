@@ -26,6 +26,8 @@ bool Game::onStart() {
 	_vel = 0;
 	sprite = new Sprite(_renderer, "image.bmp");
 	sprite->setMaterial(mat);
+	sprite->setScale((0.5f), (0.5f), (0.5f));
+	sprite->setPos(-0.5f, -0.8f, 0);
 	return true;
 }
 

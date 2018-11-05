@@ -37,7 +37,9 @@ void Square::Draw() {
 			_material->bind();
 			_material->setMatrixProperty(_renderer->getMVP());
 		}
-		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLE_STRIP,3);
+		_renderer->bind(_bufferID, 3, 0);
+		_renderer->Draw(_bufferID, _vtxCount, GL_TRIANGLE_STRIP,3,0);
+		_renderer->disableVtx(0);
 	}
 }
 

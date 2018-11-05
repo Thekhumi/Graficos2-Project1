@@ -31,6 +31,11 @@ bool Rendering::start(Window* window) {
 	_model = glm::mat4(1);
 	updateMVP();
 
+	// Enable depth test
+	//glEnable(GL_DEPTH_TEST);
+	// Accept fragment if it closer to the camera than the former one
+	//glDepthFunc(GL_LESS);
+
 	return true;
 }
 
@@ -78,21 +83,29 @@ bool Rendering::stop() {
 	cout << "-RendStop-";
 	return true;
 }
-void Rendering::Draw(int bufferID, int size, int type,int attribSize) {
-	// 1st attribute buffer : vertices
-	glEnableVertexAttribArray(0);
+void Rendering::Draw(int bufferID, int size, int type,int attribSize,int attribType) {
+	// Draw the triangle !
+	drawPrimitives(size, type);
+}
+
+void Rendering::bind(int bufferID,int attribSize,int attribType) {
+	glEnableVertexAttribArray(attribType);
 	glBindBuffer(GL_ARRAY_BUFFER, bufferID);
 	glVertexAttribPointer(
-		0,                  // attribute 0. No particular reason for 0, but must match the layout in the shader.
+		attribType,        
 		attribSize,         // size
 		GL_FLOAT,           // type
 		GL_FALSE,           // normalized?
 		0,                  // stride
 		(void*)0            // array buffer offset
 	);
-	// Draw the triangle !
+}
+void Rendering::drawPrimitives(int size,int type) {
 	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
-	glDisableVertexAttribArray(0);
+}
+
+void Rendering::disableVtx(int attribType) {
+	glDisableVertexAttribArray(attribType);
 }
 
 void Rendering::updateMVP() {

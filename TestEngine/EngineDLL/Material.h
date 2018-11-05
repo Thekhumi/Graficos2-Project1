@@ -1,5 +1,6 @@
 #pragma once
 #include "Exports.h"
+#include "Texture.h"
 #include "glm\glm.hpp"
 
 using namespace std;
@@ -15,7 +16,7 @@ public:
 	void setMatrixProperty(glm::mat4& mat);
 
 	void bind();
-
+	void bindTexture(Texture texture);
 	~Material();
 };
 

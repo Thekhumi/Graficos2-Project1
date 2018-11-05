@@ -16,7 +16,14 @@ Material::Material(unsigned int programID):_programID(programID){
 void Material::bind() 
 { 
 	glUseProgram(_programID); 
-	_matrixID = glGetUniformLocation(_programID, "MVP");
+}
+
+void Material::bindTexture(Texture texture) {
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
+	// Set our "myTextureSampler" sampler to use Texture Unit 0
+	unsigned int id = glGetUniformLocation(_programID, "myTextureSampler");
+	glUniform1i(id, 0);
 }
 
 Material * Material::loadMaterial(const char * vertex_file_path, const char * fragment_file_path) {
