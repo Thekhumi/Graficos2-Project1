@@ -15,7 +15,8 @@ Game::~Game()
 bool Game::onStart() {
 	_scale = 5;
 	cout << "-OnStart-";
-	Material * mat = Material::loadMaterial("SimpleVertexShader.vertexshader", "SimpleFragmentShader.fragmentshader");
+	Material * mat = Material::loadMaterial(VERTEX_SHADER_PATH, FRAGMENT_SHADER_PATH);
+	Material * mat2 = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
 	triangle = new Triangle(_renderer);
 	triangle->setMaterial(mat);
 	square = new Square(_renderer);
@@ -25,9 +26,8 @@ bool Game::onStart() {
 	_pepito = 0;
 	_vel = 0;
 	sprite = new Sprite(_renderer, "image.bmp");
-	sprite->setMaterial(mat);
-	sprite->setScale((0.5f), (0.5f), (0.5f));
-	sprite->setPos(-0.5f, -0.8f, 0);
+	sprite->setMaterial(mat2);
+	sprite->setScale((10.0f), (10.0f), (10.0f));
 	return true;
 }
 

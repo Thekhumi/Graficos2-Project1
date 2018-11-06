@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Defs.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="GameBase.h" />
     <ClInclude Include="Exports.h" />
@@ -49,6 +50,8 @@
   <ItemGroup>
     <None Include="..\TestEngine\SimpleFragmentShader.fragmentshader" />
     <None Include="..\TestEngine\SimpleVertexShader.vertexshader" />
+    <None Include="..\TestEngine\TextureFragmentShader.fragmentshader" />
+    <None Include="..\TestEngine\TextureVertexShader.vertexshader" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

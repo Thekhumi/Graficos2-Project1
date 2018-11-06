@@ -9,7 +9,7 @@
 using namespace std;
 
 
-Material::Material(unsigned int programID):_programID(programID){
+Material::Material(){
 
 }
 
@@ -18,16 +18,16 @@ void Material::bind()
 	glUseProgram(_programID); 
 }
 
-void Material::bindTexture(Texture texture) {
+void Material::bindTexture(unsigned int TextureID) {
 	glActiveTexture(GL_TEXTURE0);
-	glBindTexture(GL_TEXTURE_2D, texture.getTextureID());
+	glBindTexture(GL_TEXTURE_2D, TextureID);
 	// Set our "myTextureSampler" sampler to use Texture Unit 0
 	unsigned int id = glGetUniformLocation(_programID, "myTextureSampler");
 	glUniform1i(id, 0);
 }
 
 Material * Material::loadMaterial(const char * vertex_file_path, const char * fragment_file_path) {
-	unsigned int programID;
+	/*unsigned int programID;
 	if (loadShader(vertex_file_path, fragment_file_path, programID)) {
 		Material * mat = new Material(programID);
 		return mat;
@@ -35,8 +35,12 @@ Material * Material::loadMaterial(const char * vertex_file_path, const char * fr
 	else {
 		return NULL;
 	}
+	*/
+	Material * mat = new Material();
+	mat->loadShader(vertex_file_path, fragment_file_path);
+	return mat;
 }
-bool Material::loadShader(const char * vertex_file_path, const char * fragment_file_path, unsigned int & _programID) {
+unsigned int Material::loadShader(const char * vertex_file_path, const char * fragment_file_path) {
 	// Create the shaders
 	GLuint VertexShaderID = glCreateShader(GL_VERTEX_SHADER);
 	GLuint FragmentShaderID = glCreateShader(GL_FRAGMENT_SHADER);
@@ -53,7 +57,7 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 	else {
 		printf("Impossible to open %s. Are you in the right directory ? Don't forget to read the FAQ !\n", vertex_file_path);
 		getchar();
-		return false;
+		return 0;
 	}
 
 	// Read the Fragment Shader code from the file
@@ -82,7 +86,7 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 		std::vector<char> VertexShaderErrorMessage(InfoLogLength + 1);
 		glGetShaderInfoLog(VertexShaderID, InfoLogLength, NULL, &VertexShaderErrorMessage[0]);
 		printf("%s\n", &VertexShaderErrorMessage[0]);
-		return false;
+		return 0;
 	}
 
 	// Compile Fragment Shader
@@ -98,7 +102,7 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 		std::vector<char> FragmentShaderErrorMessage(InfoLogLength + 1);
 		glGetShaderInfoLog(FragmentShaderID, InfoLogLength, NULL, &FragmentShaderErrorMessage[0]);
 		printf("%s\n", &FragmentShaderErrorMessage[0]);
-		return false;
+		return 0;
 	}
 
 	// Link the program
@@ -115,7 +119,7 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 		std::vector<char> ProgramErrorMessage(InfoLogLength + 1);
 		glGetProgramInfoLog(ProgramID, InfoLogLength, NULL, &ProgramErrorMessage[0]);
 		printf("%s\n", &ProgramErrorMessage[0]);
-		return false;
+		return 0;
 	}
 
 	glDetachShader(ProgramID, VertexShaderID);
@@ -125,7 +129,7 @@ bool Material::loadShader(const char * vertex_file_path, const char * fragment_f
 	glDeleteShader(FragmentShaderID);
 
 	_programID = ProgramID;
-	return true;
+	return ProgramID;
 }
 
 void Material::setMatrixProperty( glm::mat4& mat) {

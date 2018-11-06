@@ -54,6 +54,9 @@
     <ClInclude Include="Texture.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="Defs.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameBase.cpp">
@@ -95,6 +98,12 @@
       <Filter>Archivos de recursos</Filter>
     </None>
     <None Include="..\TestEngine\SimpleVertexShader.vertexshader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\TestEngine\TextureFragmentShader.fragmentshader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\TestEngine\TextureVertexShader.vertexshader">
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>

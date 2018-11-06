@@ -3,6 +3,7 @@
 #include "Triangle.h"
 #include "Square.h"
 #include "Sprite.h"
+#include "Defs.h"
 #include "TextureImporter.h"
 class Game : public GameBase
 {

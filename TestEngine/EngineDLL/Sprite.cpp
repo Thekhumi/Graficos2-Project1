@@ -14,11 +14,13 @@ Sprite::Sprite(Rendering * renderer, const char * imagepath):Shape(renderer), _v
 	_shouldDispose = false;
 	setVertices(_vertex, 4,imagepath);
 	_vertexUV = new float[8]{
-		-1.0f,-1.0f,-1.0f,
-		-1.0f,-1.0f
+		0.0f,0.0f,
+		0.0f, 1.0f,
+		1.0f,0.0f,
+		1.0f,1.0f
 	};
-	_vtxCountUV = 8;
-	_bufferUV = _renderer->genBuffer(_vertexUV, _vtxCountUV);
+	_vtxCountUV = 4;
+	_bufferUV = _renderer->genBuffer(_vertexUV, sizeof(float)* _vtxCountUV * 2);
 }
 
 void Sprite::setVertices(float* vertex, int vtxCount, const char * imagepath) {
@@ -45,7 +47,7 @@ void Sprite::Draw() {
 		{
 			_material->bind();
 			_material->setMatrixProperty(_renderer->getMVP());
-			_material->bindTexture(*_texture);
+			_material->bindTexture(_texture->getTextureID());
 		}
 		_renderer->bind(_bufferID, 3, 0);
 		_renderer->bind(_bufferUV, 2, 1);

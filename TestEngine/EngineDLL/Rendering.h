@@ -20,9 +20,6 @@ private:
 
 	void updateMVP();
 public:
-	/*glm::mat4& GetMVP() {
-		return _mvp;
-	}*/
 
 	bool start(Window * window);
 	bool stop();
