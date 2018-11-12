@@ -41,6 +41,7 @@ c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\rendering
   c:\users\administrador\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
 c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\rendering.h(19): warning C4251: 'Rendering::_mvp': struct 'glm::mat<4,4,float,0>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Rendering'
   c:\users\administrador\desktop\graficos2-project1\testengine\deps\glm-0.9.9.0\glm\detail\type_mat.hpp(303): note: vea la declaración de 'glm::mat<4,4,float,0>'
+  Texture.cpp
   Square.cpp
 c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\window.h(13): warning C4251: 'Window::_name': class 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>' necesita tener una interfaz DLL para que la utilicen los clientes de class 'Window'
   c:\program files (x86)\microsoft visual studio\2017\community\vc\tools\msvc\14.12.25827\include\xstring(4054): note: vea la declaración de 'std::basic_string<char,std::char_traits<char>,std::allocator<char>>'
@@ -183,6 +184,7 @@ c:\users\administrador\desktop\graficos2-project1\testengine\enginedll\entity.h(
   Generando código...
      Creando biblioteca C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.lib y objeto C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.exp
 MSVCRTD.lib(initializers.obj) : warning LNK4098: la biblioteca predeterminada'msvcrt.lib' entra en conflicto con otras bibliotecas; use la biblioteca /NODEFAULTLIB:biblioteca
+Material.obj : error LNK2001: símbolo externo __imp___glewActiveTexture sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewAttachShader sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewCompileShader sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewCreateProgram sin resolver
@@ -196,6 +198,7 @@ Material.obj : error LNK2001: símbolo externo __imp___glewGetShaderiv sin resol
 Material.obj : error LNK2001: símbolo externo __imp___glewGetUniformLocation sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewLinkProgram sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewShaderSource sin resolver
+Material.obj : error LNK2001: símbolo externo __imp___glewUniform1i sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewUniformMatrix4fv sin resolver
 Material.obj : error LNK2001: símbolo externo __imp___glewUseProgram sin resolver
 Rendering.obj : error LNK2019: símbolo externo __imp_glewInit sin resolver al que se hace referencia en la función "public: bool __cdecl Rendering::start(class Window *)" (?start@Rendering@@QEAA_NPEAVWindow@@@Z)
@@ -209,4 +212,4 @@ Rendering.obj : error LNK2001: símbolo externo __imp___glewVertexAttribPointer 
 Rendering.obj : error LNK2001: símbolo externo __imp___glewBindVertexArray sin resolver
 Rendering.obj : error LNK2001: símbolo externo __imp___glewGenVertexArrays sin resolver
 ..\deps\glew-2.1.0\lib\Release\Win32\glew32.lib : warning LNK4272: el tipo de máquina de biblioteca 'x86' está en conflicto con el tipo de máquina de destino 'x64'
-C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.dll : fatal error LNK1120: 25 externos sin resolver
+C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\x64\Debug\EngineDLL.dll : fatal error LNK1120: 27 externos sin resolver

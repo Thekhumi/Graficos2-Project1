@@ -8,6 +8,8 @@ private:
 	float*_vertexUV;
 	int _vtxCount;
 	int _vtxCountUV;
+	int _frameWidth;
+	int _frameHeight;
 	unsigned int _bufferID = -1;
 	unsigned int _bufferUV = -1;
 	Texture * _texture;
@@ -16,6 +18,7 @@ public:
 	void setVertices(float* vertex, int vtxCount, const char * imagepath);
 	void Draw() override;
 	void setTextureUV(int vtxCountUV, float * vertexUV);
+	void setAnimations(int frameWidth, int frameHeight, float speed);
 	~Sprite();
 };
 

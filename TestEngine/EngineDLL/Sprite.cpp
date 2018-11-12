@@ -56,6 +56,7 @@ void Sprite::Draw() {
 		_renderer->disableVtx(1);
 	}
 }
+
 Sprite::~Sprite()
 {
 }
