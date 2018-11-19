@@ -1,7 +1,8 @@
 #include "Sprite.h"
+#include <iostream>
 
 
-
+using namespace std;
 
 Sprite::Sprite(Rendering * renderer, const char * imagepath):Shape(renderer), _vertex(NULL), _bufferID(-1){
 	_vertex = new float[12]{
@@ -38,6 +39,35 @@ void Sprite::setVertices(float* vertex, int vtxCount, const char * imagepath) {
 void Sprite::setTextureUV(int vtxCountUV, float * vertexUV) {
 	_vertexUV = vertexUV;
 	_vtxCountUV = vtxCountUV;
+}
+
+void Sprite::setFrames(int frameWidth, int frameHeight, int textureHeight, int textureWidth) {
+	int columns = textureHeight / frameHeight; //redondea para abajo por ser INT
+	int rows = textureWidth / frameWidth;
+	float uvHeight = (float)frameHeight / (float)textureHeight;
+	float uvWidth = (float)frameWidth / (float)textureWidth;
+	_framesCant = rows * columns;
+	int cont = 0;
+	_frames = new Frames[_framesCant];
+	for (int j = 0; j < rows; j++) {
+		for (int i = 0; i < columns; i++) {
+			_frames[cont].setVertexUV(uvWidth*i, uvWidth*(i + 1), 1.0f - (uvHeight*j), 1.0f - (uvHeight*(j + 1)));
+			if (cont != _framesCant) {
+				cont++;
+			}
+		}
+	}
+}
+
+void Sprite::setFrame(int frame) {
+	if (_frames != NULL) {
+		if (frame > _framesCant && frame < 0) {
+			cout << "Frame excede el máximo, colocandolo en el último";
+			frame = _framesCant;
+		}
+		_vertexUV = _frames[frame].getVertexUV();
+		_bufferUV = _renderer->genBuffer(_vertexUV, sizeof(float)* _vtxCountUV * 2);
+	}
 }
 void Sprite::Draw() {
 	if (_shouldDispose) {

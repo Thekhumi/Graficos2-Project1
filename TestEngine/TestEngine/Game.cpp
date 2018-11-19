@@ -28,6 +28,8 @@ bool Game::onStart() {
 	sprite = new Sprite(_renderer, "image.bmp");
 	sprite->setMaterial(mat2);
 	sprite->setScale((10.0f), (10.0f), (10.0f));
+	sprite->setFrames(102, 101, 512, 512);
+	sprite->setFrame(7);
 	return true;
 }
 
