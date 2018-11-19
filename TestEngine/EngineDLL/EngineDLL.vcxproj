@@ -21,6 +21,7 @@
   <ItemGroup>
     <ClInclude Include="Defs.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Frames.h" />
     <ClInclude Include="GameBase.h" />
     <ClInclude Include="Exports.h" />
     <ClInclude Include="Material.h" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="Frames.cpp" />
     <ClCompile Include="GameBase.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Rendering.cpp" />
@@ -52,6 +54,9 @@
     <None Include="..\TestEngine\SimpleVertexShader.vertexshader" />
     <None Include="..\TestEngine\TextureFragmentShader.fragmentshader" />
     <None Include="..\TestEngine\TextureVertexShader.vertexshader" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="EngineDLL.rc" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

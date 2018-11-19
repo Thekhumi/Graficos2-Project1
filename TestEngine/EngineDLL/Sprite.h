@@ -18,7 +18,7 @@ public:
 	void setVertices(float* vertex, int vtxCount, const char * imagepath);
 	void Draw() override;
 	void setTextureUV(int vtxCountUV, float * vertexUV);
-	void setAnimations(int frameWidth, int frameHeight, float speed);
+	void setAnimations(int frameWidth, int frameHeight, int textureHeight, int textureWidth);
 	~Sprite();
 };
 
