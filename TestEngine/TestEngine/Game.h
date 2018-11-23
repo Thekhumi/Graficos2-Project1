@@ -5,6 +5,7 @@
 #include "Sprite.h"
 #include "Defs.h"
 #include "TextureImporter.h"
+#include "Animation.h"
 class Game : public GameBase
 {
 private:
@@ -12,6 +13,7 @@ private:
 	Triangle * triangle;
 	Square * square;
 	Sprite * sprite;
+	Animation * spriteAnimation;
 	float _vel;
 	float _rot;
 	float _pos;

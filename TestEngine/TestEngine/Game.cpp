@@ -29,18 +29,18 @@ bool Game::onStart() {
 	sprite->setMaterial(mat2);
 	sprite->setScale((10.0f), (10.0f), (10.0f));
 	sprite->setFrames(102, 101, 512, 512);
-	sprite->setFrame(7);
+	int * frames = new int[20]{ 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20 };
+	spriteAnimation = new Animation(sprite);
+	spriteAnimation->setAnimation(frames, 20, 30);
+	spriteAnimation->setPlay(true);
 	return true;
 }
 
 bool Game::onUpdate(double deltaTime) {
-	if(_pepito < 3000) {
-		_pepito++;
-		cout << endl << "Hay " << _pepito << " pepitos." << endl;
-		_vel +=  1 * deltaTime;
-		triangle->setRotZ(_vel);
-		square->setRotZ(_vel);
-	}
+	_vel +=  1 * deltaTime;
+	triangle->setRotZ(_vel);
+	square->setRotZ(_vel);
+	spriteAnimation->update(deltaTime);
 	return true;
 }
 
