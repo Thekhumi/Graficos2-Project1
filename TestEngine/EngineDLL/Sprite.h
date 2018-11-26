@@ -12,13 +12,14 @@ private:
 	int _frameWidth;
 	int _frameHeight;
 	int _framesCant;
+	bool _hasAlphaC;
 	unsigned int _bufferID = -1;
 	unsigned int _bufferUV = -1;
 	Texture * _texture;
 	Frames * _frames;
 	
 public:
-	Sprite(Rendering *renderer, const char * imagepath);
+	Sprite(Rendering *renderer, const char * imagepath, bool hasAlphaC);
 	void setVertices(float* vertex, int vtxCount, const char * imagepath);
 	void Draw() override;
 	void setTextureUV(int vtxCountUV, float * vertexUV);

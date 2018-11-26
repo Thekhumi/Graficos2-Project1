@@ -29,7 +29,7 @@ protected:
 
 public:
 	void setCollider(glm::vec3 pos, float width, float height, bool isStatic) {
-		_collider = new BoxCollider(width, height, pos, isStatic);
+		_collider = new BoxCollider(width, height, pos, isStatic,1);
 	}
 
 	void setScale(float x,float y,float z) {

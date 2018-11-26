@@ -5,7 +5,7 @@ class ENGINEDLL_API TextureImporter
 {
 public:
 	TextureImporter();
-	static Texture* loadBMP(const char * imagepath);
+	static Texture* loadBMP(const char * imagepath, bool hasAlpha);
 	~TextureImporter();
 };
 

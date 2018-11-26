@@ -32,11 +32,11 @@ bool Rendering::start(Window* window) {
 	updateMVP();
 
 	// Enable depth test
-	//glEnable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 	// Accept fragment if it closer to the camera than the former one
-	//glDepthFunc(GL_LESS);
-	//glEnable(GL_BLEND);
-	//glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+	glDepthFunc(GL_LESS);
+	glEnable(GL_BLEND);
+	glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 	return true;
 }
 
@@ -46,20 +46,25 @@ void Rendering::clearColor(float r, float g, float b, float a) {
 
 void Rendering::clear()
 {
-	glClear(GL_COLOR_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 void Rendering::swapBuffer() {
 	glfwSwapBuffers((GLFWwindow*)_window->getWindow());
 }
 
-unsigned int Rendering::genTexture(unsigned int width, unsigned int height, unsigned  char * data) {
+unsigned int Rendering::genTexture(unsigned int width, unsigned int height, unsigned  char * data,bool hasAlpha) {
 	unsigned int textureID;
 	glGenTextures(1, &textureID);
 	// Se "Ata" la nueva textura : Todas las futuras funciones de texturas van a modificar esta textura
 	glBindTexture(GL_TEXTURE_2D, textureID);
 
 	// Se le pasa la imagen a OpenGL
-	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+	if (hasAlpha) {
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_BGRA, GL_UNSIGNED_BYTE, data);
+	}
+	else {
+		glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, width, height, 0, GL_BGR, GL_UNSIGNED_BYTE, data);
+	}
 
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);

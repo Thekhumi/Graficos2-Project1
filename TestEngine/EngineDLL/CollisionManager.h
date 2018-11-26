@@ -16,6 +16,7 @@ public:
 	void CheckLayers();
 	void CheckCollisions(list<Entity*> *layerA, list<Entity*> *layerB);
 	void Collision(Entity* A, Entity* B);
+	float CalMass(float m1, float m2);
 	~CollisionManager();
 };
 

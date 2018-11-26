@@ -10,7 +10,7 @@ void Avatar::walk(float speed) {
 }
 
 void Avatar::update(double deltaTime) {
-	walk(1 * deltaTime);
+	walk(3 * deltaTime);
 	_anim->update(deltaTime);
 }
 

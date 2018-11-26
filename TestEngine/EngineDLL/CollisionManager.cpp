@@ -39,6 +39,9 @@ void CollisionManager::Collision(Entity* A, Entity* B){
 	   (A->getBoxCollider()->getHeight() + B->getBoxCollider()->getHeight()) / 2.0f) {
 		float xP = ((A->getBoxCollider()->getWidth() / 2.0f) + (B->getBoxCollider()->getWidth() / 2.0f)) - module.x;
 		float yP = ((A->getBoxCollider()->getHeight() / 2.0f) + (B->getBoxCollider()->getHeight() / 2.0f)) - module.y;
+		float totalMass = A->getBoxCollider()->getMass() + B->getBoxCollider()->getMass();
+		float mass1 = A->getBoxCollider()->getMass();
+		float mass2 = B->getBoxCollider()->getMass();
 		if (xP > yP) {
 			if (Diff.y > 0) {
 				yP = -yP;
@@ -52,8 +55,8 @@ void CollisionManager::Collision(Entity* A, Entity* B){
 			}
 			else
 			{
-				A->setPos(A->getPosX(), A->getPosY() - (yP / 2.0f), 0.0f);
-				B->setPos(B->getPosX(), B->getPosY() + (yP / 2.0f), 0.0f);
+				A->setPos(A->getPosX(), A->getPosY() - (yP * CalMass(totalMass, mass2)), 0.0f);
+				B->setPos(B->getPosX(), B->getPosY() + (yP * CalMass(totalMass, mass1)), 0.0f);
 			}
 		}
 		else {
@@ -70,13 +73,17 @@ void CollisionManager::Collision(Entity* A, Entity* B){
 			}
 			else
 			{
-				A->setPos(A->getPosX() - (xP / 2.0f), A->getPosY(), 0.0f);
-				B->setPos(B->getPosX() + (xP / 2.0f), B->getPosY(), 0.0f);
+				A->setPos(A->getPosX() - (xP*CalMass(totalMass,mass2)), A->getPosY(), 0.0f);
+				B->setPos(B->getPosX() + (xP*CalMass(totalMass,mass1)), B->getPosY(), 0.0f);
 
 			}
 		}
 	}
 }
-CollisionManager::~CollisionManager()
-{
+
+float CollisionManager::CalMass(float totalMass, float mass) {
+	float num = mass / totalMass;
+	return num;
+}
+CollisionManager::~CollisionManager(){
 }

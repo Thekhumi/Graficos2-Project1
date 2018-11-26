@@ -4,7 +4,7 @@
 
 using namespace std;
 
-Sprite::Sprite(Rendering * renderer, const char * imagepath):Shape(renderer), _vertex(NULL), _bufferID(-1){
+Sprite::Sprite(Rendering * renderer, const char * imagepath,bool hasAlphaC):Shape(renderer), _vertex(NULL), _bufferID(-1),_hasAlphaC(hasAlphaC){
 	_vertex = new float[12]{
 		-0.5f, -0.5f, 0.f,
 		-0.5f, 0.5f, 0.f,
@@ -31,7 +31,7 @@ void Sprite::setVertices(float* vertex, int vtxCount, const char * imagepath) {
 	_vtxCount = vtxCount;
 	_shouldDispose = true;
 
-	_texture = TextureImporter::loadBMP(imagepath);
+	_texture = TextureImporter::loadBMP(imagepath,_hasAlphaC);
 	_bufferID = _renderer->genBuffer(_vertex, sizeof(float) * vtxCount * 3);
 }
 

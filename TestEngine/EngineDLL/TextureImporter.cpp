@@ -7,7 +7,7 @@
 TextureImporter::TextureImporter(){
 }
 
-Texture * TextureImporter::loadBMP(const char * imagepath) {
+Texture * TextureImporter::loadBMP(const char * imagepath, bool hasAlpha) {
 	// Lectura de información del encabezado del archivo
 	unsigned char header[54]; // Each BMP file begins by a 54-bytes header
 	unsigned int dataPos;     // Position in the file where the actual data begins
@@ -48,7 +48,7 @@ Texture * TextureImporter::loadBMP(const char * imagepath) {
 	fclose(file);
 
 	// Se Crea una textura OpenGL
-	unsigned int textureID = Rendering::genTexture(width,height,data);
+	unsigned int textureID = Rendering::genTexture(width,height,data,hasAlpha);
 	Texture  * texture = new Texture(width,height,textureID);
 	return texture;
 }
