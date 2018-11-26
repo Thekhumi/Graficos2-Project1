@@ -1,6 +1,7 @@
 #pragma once
 #include "Rendering.h"
 #include "Material.h"
+#include "BoxCollider.h"
 #include <gl\glew.h>
 class ENGINEDLL_API Entity
 {
@@ -8,6 +9,7 @@ protected:
 	Rendering * _renderer;
 	Material * _material;
 	bool _shouldDispose;
+	BoxCollider* _collider;
 
 	glm::vec3 _position;
 	glm::vec3 _rotation;
@@ -26,6 +28,10 @@ protected:
 	}
 
 public:
+	void setCollider(glm::vec3 pos, float width, float height, bool isStatic) {
+		_collider = new BoxCollider(width, height, pos, isStatic);
+	}
+
 	void setScale(float x,float y,float z) {
 		_scale[0] = x;
 		_scale[1] = y;
@@ -35,15 +41,49 @@ public:
 		updateModelMatrix();
 	}
 	
-	void setPos(float x, float y, float z) {
+	void setPosX(float x) {
 		_position[0] = x;
+		if (_collider != NULL)
+		_collider->updatePosition(_position);
+		_translateMat = glm::translate(glm::mat4(1.0f), _position);
+		updateModelMatrix();
+	}
+	void setPosY(float y) {
 		_position[1] = y;
+		if (_collider != NULL)
+		_collider->updatePosition(_position);
+		_translateMat = glm::translate(glm::mat4(1.0f), _position);
+		updateModelMatrix();
+	}
+	void setPosZ(float z) {
 		_position[2] = z;
-
+		if (_collider != NULL)
+		_collider->updatePosition(_position);
 		_translateMat = glm::translate(glm::mat4(1.0f), _position);
 		updateModelMatrix();
 	}
 
+	void setPos(float x, float y, float z) {
+		_position[0] = x;
+		_position[1] = y;
+		_position[2] = z;
+		if(_collider != NULL)
+		_collider->updatePosition(_position);
+		_translateMat = glm::translate(glm::mat4(1.0f), _position);
+		updateModelMatrix();
+	}
+	float getPosX(){
+		return _position[0];
+	}
+	float getPosY() {
+		return _position[1];
+	}
+	float getPosZ() {
+		return _position[2];
+	}
+	glm::vec3 getPos() {
+		return _position;
+	}
 	void setRotX(float x) {
 		_rotation[0] = x;
 		glm::vec3 axis;
@@ -77,6 +117,7 @@ public:
 	glm::vec3 getRotation() {
 		return _rotation;
 	}
+	BoxCollider * getBoxCollider() { return _collider; };
 	Entity(Rendering * rend);
 	virtual void Draw() = 0;
 	~Entity();

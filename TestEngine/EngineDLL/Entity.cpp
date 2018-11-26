@@ -14,6 +14,8 @@ Entity::Entity(Rendering * rend){
 	_rotateYMat = glm::mat4(1.0f);
 	_rotateZMat = glm::mat4(1.0f);
 	_scaleMat = glm::mat4(1.0f);
+
+	_collider = NULL;
 }
 
 

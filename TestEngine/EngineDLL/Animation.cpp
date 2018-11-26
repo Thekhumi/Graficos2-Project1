@@ -16,6 +16,7 @@ void Animation::setAnimation(int*frames, int framesCant, double speed) {
 	_firstFrame = _frames[0];
 	_lastFrame = _frames[framesCant];
 	_speed = speed;
+	_sprite->setFrame(_frames[_cont]);
 }
 
 void Animation::update(double deltaTime) {

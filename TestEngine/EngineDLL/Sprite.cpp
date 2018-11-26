@@ -6,11 +6,10 @@ using namespace std;
 
 Sprite::Sprite(Rendering * renderer, const char * imagepath):Shape(renderer), _vertex(NULL), _bufferID(-1){
 	_vertex = new float[12]{
-		-0.5f,-0.5f,0.0f,
-		-0.5f,0.0f,0.0f,
-		0.5f,-0.5f,0.0f,
-		0.5f,0.0f,0.0f,
-
+		-0.5f, -0.5f, 0.f,
+		-0.5f, 0.5f, 0.f,
+		0.5f, -0.5f, 0.f,
+		0.5f, 0.5f, 0.f
 	};
 	_shouldDispose = false;
 	setVertices(_vertex, 4,imagepath);

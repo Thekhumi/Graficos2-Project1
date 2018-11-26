@@ -6,18 +6,19 @@
 #include "Defs.h"
 #include "TextureImporter.h"
 #include "Animation.h"
+#include "Avatar.h"
+#include "CollisionManager.h"
 class Game : public GameBase
 {
 private:
-	int _pepito;
+	CollisionManager * Cmanager;
 	Triangle * triangle;
 	Square * square;
 	Sprite * sprite;
+	Sprite * wallSprite;
 	Animation * spriteAnimation;
+	Avatar * Personaje;
 	float _vel;
-	float _rot;
-	float _pos;
-	float _scale;
 protected:
 	bool onStart() override;
 	bool onStop() override;

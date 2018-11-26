@@ -24,6 +24,7 @@ public:
 	void setTextureUV(int vtxCountUV, float * vertexUV);
 	void setFrames(int frameWidth, int frameHeight, int textureHeight, int textureWidth);
 	void setFrame(int frame);
+	float * getVertex() { return _vertex; };
 	~Sprite();
 };
 
