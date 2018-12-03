@@ -30,9 +30,10 @@ bool Game::onStart() {
 	colorCube = new ColorSquare(_renderer);
 	colorCube->setMaterial(mat3);
 	colorCube->setPos((0, 5), 1, 0);
-	circle = new Circle(_renderer,10,5);
+	colorCube->setScale(5, 5, 5);
+	circle = new Circle(_renderer,120,2);
 	circle->setMaterial(mat);
-	circle->setScale(5, 5, 5);
+	circle->setScale(1, 1, 1);
 	circle->setPosX(-5.5);
 	//var de rotacion
 	_vel = 0;
@@ -83,7 +84,7 @@ void Game::onDraw() {
 	square->Draw();
 	triangle->Draw();
 	colorCube->Draw();
-	//circle->Draw();
+	circle->Draw();
 	wallSprite->Draw();
 	sprite->Draw();
 }
