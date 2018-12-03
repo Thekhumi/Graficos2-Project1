@@ -1,8 +1,7 @@
 #include "Circle.h"
 #include <math.h>
-Circle::Circle(Rendering * renderer, int triangleCant, float radius):Shape(renderer){
-	_triangleCant = triangleCant;
-	_radius = radius;
+Circle::Circle(Rendering * renderer, int triangleCant, float radius):Shape(renderer),_triangleCant(triangleCant),
+_radius(radius){
 	_vtxCount = _triangleCant * 3;
 	_degree = 360.0f / _triangleCant;
 	_angle = 0.0f;
