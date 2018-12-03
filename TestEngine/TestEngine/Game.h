@@ -8,6 +8,8 @@
 #include "Animation.h"
 #include "Avatar.h"
 #include "CollisionManager.h"
+#include "ColorSquare.h"
+#include "Circle.h"
 class Game : public GameBase
 {
 private:
@@ -18,6 +20,8 @@ private:
 	Sprite * wallSprite;
 	Animation * spriteAnimation;
 	Avatar * Personaje;
+	ColorSquare * colorCube;
+	Circle * circle;
 	float _vel;
 protected:
 	bool onStart() override;

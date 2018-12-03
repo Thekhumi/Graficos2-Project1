@@ -19,6 +19,7 @@ bool Game::onStart() {
 
 	Material * mat = Material::loadMaterial(VERTEX_SHADER_PATH, FRAGMENT_SHADER_PATH);
 	Material * mat2 = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
+	Material * mat3 = Material::loadMaterial(COLOR_VERTEX_SHADER_PATH, COLOR_FRAGMENT_SHADER_PATH);
 	//figuras
 	triangle = new Triangle(_renderer);
 	triangle->setMaterial(mat);
@@ -26,6 +27,13 @@ bool Game::onStart() {
 	square->setMaterial(mat);
 	square->setScale(5, 5, 5);
 	triangle->setScale(6, 6, 6);
+	colorCube = new ColorSquare(_renderer);
+	colorCube->setMaterial(mat3);
+	colorCube->setPos((0, 5), 1, 0);
+	circle = new Circle(_renderer,10,5);
+	circle->setMaterial(mat);
+	circle->setScale(5, 5, 5);
+	circle->setPosX(-5.5);
 	//var de rotacion
 	_vel = 0;
 
@@ -55,6 +63,7 @@ bool Game::onStart() {
 	//Pared
 	wallSprite->setCollider(wallSprite->getPos(), 5.0f, 5.0f, false);
 	wallSprite->getBoxCollider()->setMass(5.0f);
+
 	//Add Entities to Collision Manager
 	Cmanager->AddEntity(Personaje->getSprite(), 0);
 	Cmanager->AddEntity(wallSprite, 1);
@@ -73,6 +82,8 @@ bool Game::onUpdate(double deltaTime) {
 void Game::onDraw() {
 	square->Draw();
 	triangle->Draw();
+	colorCube->Draw();
+	//circle->Draw();
 	wallSprite->Draw();
 	sprite->Draw();
 }

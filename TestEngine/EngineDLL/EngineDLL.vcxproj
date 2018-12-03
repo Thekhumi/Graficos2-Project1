@@ -22,7 +22,9 @@
     <ClInclude Include="Animation.h" />
     <ClInclude Include="Avatar.h" />
     <ClInclude Include="BoxCollider.h" />
+    <ClInclude Include="Circle.h" />
     <ClInclude Include="CollisionManager.h" />
+    <ClInclude Include="ColorSquare.h" />
     <ClInclude Include="Defs.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Frames.h" />
@@ -43,7 +45,9 @@
     <ClCompile Include="Animation.cpp" />
     <ClCompile Include="Avatar.cpp" />
     <ClCompile Include="BoxCollider.cpp" />
+    <ClCompile Include="Circle.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
+    <ClCompile Include="ColorSquare.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Frames.cpp" />
     <ClCompile Include="GameBase.cpp" />
@@ -58,6 +62,8 @@
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="..\TestEngine\ColorFragmentShader.fragmentshader" />
+    <None Include="..\TestEngine\ColorVertexShader.vertexshader" />
     <None Include="..\TestEngine\SimpleFragmentShader.fragmentshader" />
     <None Include="..\TestEngine\SimpleVertexShader.vertexshader" />
     <None Include="..\TestEngine\TextureFragmentShader.fragmentshader" />

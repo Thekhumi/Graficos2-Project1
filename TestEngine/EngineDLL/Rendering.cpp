@@ -90,7 +90,7 @@ bool Rendering::stop() {
 	return true;
 }
 void Rendering::Draw(int bufferID, int size, int type,int attribSize,int attribType) {
-	drawPrimitives(size, type);
+	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
 }
 
 void Rendering::bind(int bufferID,int attribSize,int attribType) {
@@ -104,9 +104,6 @@ void Rendering::bind(int bufferID,int attribSize,int attribType) {
 		0,                  // stride
 		(void*)0            // array buffer offset
 	);
-}
-void Rendering::drawPrimitives(int size,int type) {
-	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
 }
 
 void Rendering::disableVtx(int attribType) {

@@ -72,6 +72,12 @@
     <ClInclude Include="CollisionManager.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
+    <ClInclude Include="ColorSquare.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Circle.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="GameBase.cpp">
@@ -122,6 +128,12 @@
     <ClCompile Include="CollisionManager.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="ColorSquare.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Circle.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\TestEngine\SimpleFragmentShader.fragmentshader">
@@ -134,6 +146,12 @@
       <Filter>Archivos de recursos</Filter>
     </None>
     <None Include="..\TestEngine\TextureVertexShader.vertexshader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\TestEngine\ColorFragmentShader.fragmentshader">
+      <Filter>Archivos de recursos</Filter>
+    </None>
+    <None Include="..\TestEngine\ColorVertexShader.vertexshader">
       <Filter>Archivos de recursos</Filter>
     </None>
   </ItemGroup>
