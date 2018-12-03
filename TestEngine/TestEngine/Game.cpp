@@ -29,8 +29,8 @@ bool Game::onStart() {
 	triangle->setScale(6, 6, 6);
 	colorCube = new ColorSquare(_renderer);
 	colorCube->setMaterial(mat3);
-	colorCube->setPos((0, 5), 1, 0);
-	colorCube->setScale(5, 5, 5);
+	colorCube->setPos((0, 5), 1, -1);
+	colorCube->setScale(5, 5, 1);
 	circle = new Circle(_renderer,120,2);
 	circle->setMaterial(mat);
 	circle->setScale(1, 1, 1);
