@@ -48,8 +48,8 @@ void Sprite::setFrames(int frameWidth, int frameHeight, int textureHeight, int t
 	_framesCant = rows * columns;
 	int cont = 0;
 	_frames = new Frames[_framesCant];
-	for (int j = 0; j < rows; j++) {
-		for (int i = 0; i < columns; i++) {
+	for (int j = 0; j < columns; j++) {
+		for (int i = 0; i < rows; i++) {
 			_frames[cont].setVertexUV(uvWidth*i, uvWidth*(i + 1), 1.0f - (uvHeight*j), 1.0f - (uvHeight*(j + 1)));
 			if (cont != _framesCant) {
 				cont++;

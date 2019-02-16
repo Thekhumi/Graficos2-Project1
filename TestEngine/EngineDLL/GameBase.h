@@ -12,6 +12,7 @@ private:
 	bool _start;
 	bool _stop;
 	bool _update;
+	int _lastState = false;
 protected:
 	Rendering * _renderer;
 	virtual bool onStart() = 0;
@@ -23,6 +24,7 @@ public:
 	bool start();
 	bool stop();
 	void loop();
+	bool input(int key);
 	~GameBase();
 };
 

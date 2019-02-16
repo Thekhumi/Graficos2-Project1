@@ -50,6 +50,18 @@
       </ScrollFactor>
       <ExportMode>CSV</ExportMode>
     </LayerDefinition>
+    <LayerDefinition xsi:type="TileLayerDefinition">
+      <Name>Tree</Name>
+      <Grid>
+        <Width>16</Width>
+        <Height>16</Height>
+      </Grid>
+      <ScrollFactor>
+        <X>1</X>
+        <Y>1</Y>
+      </ScrollFactor>
+      <ExportMode>CSV</ExportMode>
+    </LayerDefinition>
   </LayerDefinitions>
   <Tilesets>
     <Tileset>
@@ -62,8 +74,8 @@
       <TileSep>0</TileSep>
     </Tileset>
     <Tileset>
-      <Name>Wall</Name>
-      <FilePath>Objects\Hill0.png</FilePath>
+      <Name>Tree</Name>
+      <FilePath>Objects\Tree0.png</FilePath>
       <TileSize>
         <Width>16</Width>
         <Height>16</Height>

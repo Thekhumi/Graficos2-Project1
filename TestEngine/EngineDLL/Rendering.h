@@ -30,7 +30,6 @@ public:
 	void destroyBuffer(unsigned int bufferID);
 	void Draw(int bufferID, int size,int type, int attribSize, int attribType);
 	void bind(int bufferID, int attribSize, int attribType);
-	void drawPrimitives(int size, int type);
 	void disableVtx(int attribType);
 	void loadMatrix();
 	void setMatrix(glm::mat4 model);
@@ -38,6 +37,9 @@ public:
 	static  unsigned int genTexture(unsigned int width, unsigned int height, unsigned char * data, bool hasAlpha);
 	glm::mat4& getMVP() {
 		return _mvp;
+	}
+	Window getWindow() {
+		return * _window;
 	}
 
 	Rendering();
