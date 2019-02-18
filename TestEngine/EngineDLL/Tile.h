@@ -14,6 +14,8 @@ private:
 public:
 	Tile(float posX, float posY,Tilemap * tilemap,Rendering * renderer, const char * imagepath, bool hasAlphaC);
 	void setTilePos(float x, float y);
+	int getTilePosX() { return _tileposX; };
+	int getTilePosY() { return _tileposY; };
 	void moveTilePos(float movX, float movY);
 	~Tile();
 };

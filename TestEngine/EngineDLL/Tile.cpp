@@ -16,9 +16,7 @@ void Tile::setTilePos(float x, float y) {
 }
 
 void Tile::moveTilePos(float movX, float movY) {
-	_tileposX += movX;
-	_tileposY += movY;
-	setFrame(_tilemap->getTile(_tileposX, _tileposY));
+	setTilePos(_tileposX + movX, _tileposY + movY);
 }
 
 Tile::~Tile()

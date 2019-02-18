@@ -13,6 +13,10 @@
 #include "Tilemap.h"
 #include "Tile.h"
 #include <vector>
+//GAME
+#include "Guerrero.h"
+#include "Monster.h"
+#include "SwordPowerup.h"
 class Game : public GameBase
 {
 private:
@@ -21,14 +25,23 @@ private:
 	Square * square;
 	Sprite * sprite;
 	Sprite * wallSprite;
+	Sprite * victoryScreen;
 	Animation * spriteAnimation;
 	Avatar * Personaje;
 	ColorSquare * colorCube;
 	Circle * circle;
 	Tilemap * tilemap;
+	vector<Monster> enemies;
 	vector<Tile> tiles;
+	SwordPowerup * powerUp;
 	float _vel;
 	float _timer = 1;
+	int x = 0;
+	int y = 0;
+	int enemyCount = 5;
+	bool gameOver = false;
+
+	Guerrero * guerrero;
 protected:
 	bool onStart() override;
 	bool onStop() override;

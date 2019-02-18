@@ -21,9 +21,27 @@
     <ClCompile Include="main.cpp">
       <Filter>Archivos de origen</Filter>
     </ClCompile>
+    <ClCompile Include="Guerrero.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="Monster.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
+    <ClCompile Include="SwordPowerup.cpp">
+      <Filter>Archivos de origen</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Guerrero.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="Monster.h">
+      <Filter>Archivos de encabezado</Filter>
+    </ClInclude>
+    <ClInclude Include="SwordPowerup.h">
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
@@ -34,6 +52,18 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Tilemap\Floor.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Warrior.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Player0.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="MedWep.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="Victory.bmp">
       <Filter>Archivos de recursos</Filter>
     </Image>
   </ItemGroup>

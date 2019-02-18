@@ -11,7 +11,6 @@ private:
 	Animation* _anim;
 public:
 	Avatar(Sprite * sprite, Animation * anim);
-	void walk(float speed);
 	void update(double deltaTime);
 	void setSprite(Sprite *sprite) { _sprite = sprite; };
 	void setAnimation(Animation *anim) { _anim = anim; };

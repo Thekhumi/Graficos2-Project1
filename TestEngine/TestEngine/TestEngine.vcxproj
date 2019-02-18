@@ -123,7 +123,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Game.cpp" />
+    <ClCompile Include="Guerrero.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Monster.cpp" />
+    <ClCompile Include="SwordPowerup.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\EngineDLL\EngineDLL.vcxproj">
@@ -132,12 +135,19 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+    <ClInclude Include="Guerrero.h" />
+    <ClInclude Include="Monster.h" />
+    <ClInclude Include="SwordPowerup.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Tilemap\Level1.oel" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="MedWep.bmp" />
+    <Image Include="Player0.bmp" />
     <Image Include="Tilemap\Floor.bmp" />
+    <Image Include="Victory.bmp" />
+    <Image Include="Warrior.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

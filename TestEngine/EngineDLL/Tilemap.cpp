@@ -59,7 +59,7 @@ Tilemap::Tilemap(const char * filepath, int tilesize, int height, int width)
 }
 
 int Tilemap::getTile(int x, int y) {
-	if ( x > 0 && x < _Xtiles && y < _Ytiles && y > 0) {
+	if ( x >= 0 && x < _Xtiles && y < _Ytiles && y >= 0) {
 		return _tiles[y][x];
 	}
 	else return 5;
