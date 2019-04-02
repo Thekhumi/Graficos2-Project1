@@ -41,7 +41,9 @@ public:
 	Window getWindow() {
 		return * _window;
 	}
-
+	void setViewMatrix(float * param1, float * param2, float * param3);
+	void setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar);
+	void setProjectiveMatrixPerspective(float fovy, float aspect, float zNear, float zFar);
 	Rendering();
 	~Rendering();
 };

@@ -127,6 +127,22 @@ void Rendering::multiplyMatrix(glm::mat4 model) {
 	updateMVP();
 }
 
+void Rendering::setViewMatrix(float * param1, float * param2, float * param3) {
+	_view = glm::lookAt(
+		glm::vec3(param1[0], param1[1], param1[2]),
+		glm::vec3(param2[0], param2[1], param2[2]),
+		glm::vec3(param3[0], param3[1], param3[2]))
+		;
+}
+
+void Rendering::setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar) {
+	_projection = glm::ortho(left, right, bottom, top, zNear, zFar);
+}
+
+void Rendering::setProjectiveMatrixPerspective(float fovy, float aspect, float zNear, float zFar) {
+	_projection = glm::perspective(fovy, aspect, zNear, zFar);
+}
+
 
 Rendering::~Rendering()
 {

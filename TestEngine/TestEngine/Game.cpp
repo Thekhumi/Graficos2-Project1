@@ -17,7 +17,7 @@ bool Game::onStart() {
 }
 
 bool Game::onUpdate(double deltaTime) {
-	
+	return true;
 }
 
 void Game::onDraw() {
