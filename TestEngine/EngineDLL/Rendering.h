@@ -7,8 +7,7 @@
 
 #include <glm\glm.hpp>
 #include <glm\gtc\matrix_transform.hpp>
-class ENGINEDLL_API Rendering
-{
+class ENGINEDLL_API Rendering{
 private:
 	Window * _window;
 	unsigned int _VertexArrayID;
@@ -18,8 +17,12 @@ private:
 	glm::mat4 _projection;
 	glm::mat4 _mvp;
 
+	glm::mat4 _projectionCacheOrtho;
+	glm::mat4 _projectionCachePerspective;
+
 	void updateMVP();
 public:
+	enum MODE {ORTHO, PERSPECTIVE};
 
 	bool start(Window * window);
 	bool stop();
@@ -44,6 +47,7 @@ public:
 	void setViewMatrix(float * param1, float * param2, float * param3);
 	void setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar);
 	void setProjectiveMatrixPerspective(float fovy, float aspect, float zNear, float zFar);
+	void setProjectionMode(MODE mode);
 	Rendering();
 	~Rendering();
 };

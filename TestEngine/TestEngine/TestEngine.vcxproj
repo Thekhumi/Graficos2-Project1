@@ -133,16 +133,6 @@
   <ItemGroup>
     <ClInclude Include="Game.h" />
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Tilemap\Level1.oel" />
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="MedWep.bmp" />
-    <Image Include="Player0.bmp" />
-    <Image Include="Tilemap\Floor.bmp" />
-    <Image Include="Victory.bmp" />
-    <Image Include="Warrior.bmp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

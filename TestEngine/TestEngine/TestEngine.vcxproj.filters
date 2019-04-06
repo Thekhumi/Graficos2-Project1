@@ -27,26 +27,4 @@
       <Filter>Archivos de encabezado</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <None Include="Tilemap\Level1.oel">
-      <Filter>Archivos de recursos</Filter>
-    </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="Tilemap\Floor.bmp">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="Warrior.bmp">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="Player0.bmp">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="MedWep.bmp">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-    <Image Include="Victory.bmp">
-      <Filter>Archivos de recursos</Filter>
-    </Image>
-  </ItemGroup>
 </Project>

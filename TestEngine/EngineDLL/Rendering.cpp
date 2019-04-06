@@ -27,7 +27,6 @@ bool Rendering::start(Window* window) {
 		glm::vec3(0, 0, 0),
 		glm::vec3(0, 1, 0))
 		;
-	_projection = glm::ortho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
 	_model = glm::mat4(1);
 	updateMVP();
 
@@ -136,14 +135,23 @@ void Rendering::setViewMatrix(float * param1, float * param2, float * param3) {
 }
 
 void Rendering::setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar) {
-	_projection = glm::ortho(left, right, bottom, top, zNear, zFar);
+	_projectionCacheOrtho = glm::ortho(left, right, bottom, top, zNear, zFar);
 }
 
 void Rendering::setProjectiveMatrixPerspective(float fovy, float aspect, float zNear, float zFar) {
-	_projection = glm::perspective(fovy, aspect, zNear, zFar);
+	_projectionCachePerspective = glm::perspective(fovy, aspect, zNear, zFar);
 }
 
-
+void Rendering::setProjectionMode(MODE mode) {
+	switch (mode) {
+	case ORTHO:
+		_projection = _projectionCacheOrtho;
+		break;
+	case  PERSPECTIVE:
+		_projection = _projectionCachePerspective;
+		break;
+	}
+}
 Rendering::~Rendering()
 {
 }

@@ -12,6 +12,7 @@
 #include "Circle.h"
 #include "Tilemap.h"
 #include "Tile.h"
+#include "Camera.h"
 #include <vector>
 class Game : public GameBase
 {
