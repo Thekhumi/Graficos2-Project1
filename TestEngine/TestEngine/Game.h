@@ -27,6 +27,7 @@ private:
 	Avatar * Personaje;
 	ColorSquare * colorCube;
 	Circle * circle;
+	Camera * camera;
 protected:
 	bool onStart() override;
 	bool onStop() override;

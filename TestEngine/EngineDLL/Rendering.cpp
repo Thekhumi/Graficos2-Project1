@@ -132,6 +132,7 @@ void Rendering::setViewMatrix(float * param1, float * param2, float * param3) {
 		glm::vec3(param2[0], param2[1], param2[2]),
 		glm::vec3(param3[0], param3[1], param3[2]))
 		;
+	updateMVP();
 }
 
 void Rendering::setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar) {
@@ -151,6 +152,7 @@ void Rendering::setProjectionMode(MODE mode) {
 		_projection = _projectionCachePerspective;
 		break;
 	}
+	updateMVP();
 }
 Rendering::~Rendering()
 {
