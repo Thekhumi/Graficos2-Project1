@@ -1,5 +1,7 @@
 #include "Camera.h"
+#include <iostream>
 
+using namespace std;
 
 
 Camera::Camera(){
@@ -8,6 +10,18 @@ Camera::Camera(){
 void Camera::walk(float z) {
 	eyeZ += z;
 	centerZ += z;
+	update();
+}
+
+void Camera::pitch(float rotX) {
+	forward.y += sin(glm::radians(rotX));
+	forward.z += cos(glm::radians(rotX));
+	update();
+}
+
+void Camera::yaw(float rotY) {
+	centerX += cos(glm::radians(rotY));
+	centerZ += sin(glm::radians(rotY));
 	update();
 }
 void Camera::update() {
@@ -25,7 +39,7 @@ void Camera::strafe(float x) {
 	update();
 }
 
-void Camera::cameraInput(bool up, bool down, bool left, bool right,double deltatime){
+void Camera::cameraInput(bool up, bool down, bool left, bool right,bool q, bool e,double deltatime){
 	if (up) {
 		walk(-1 * deltatime);
 	}
@@ -37,6 +51,13 @@ void Camera::cameraInput(bool up, bool down, bool left, bool right,double deltat
 	}
 	if (right) {
 		strafe(1 * deltatime);
+	}
+	if (q) {
+		pitch(-1 * deltatime);
+		cout << centerX << "," <<  centerY  << "," << centerZ << endl;
+	}
+	if (e) {
+		pitch(1 * deltatime);
 	}
 }
 Camera::~Camera(){
