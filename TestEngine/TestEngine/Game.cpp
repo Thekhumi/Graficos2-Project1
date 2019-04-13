@@ -28,7 +28,7 @@ bool Game::onStart() {
 
 bool Game::onUpdate(double deltaTime) {
 	//square->setPosX(square->getPosX() - 0.02f);
-	camera->cameraInput(input(265),input(264),input(263), input(262) , input(81), input(87),deltaTime);
+	camera->cameraInput(input(265),input(264),input(263), input(262) , input(87), input(83), input(81),input (69),deltaTime);
 	return true;
 }
 

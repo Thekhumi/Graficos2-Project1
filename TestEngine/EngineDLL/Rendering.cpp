@@ -126,11 +126,11 @@ void Rendering::multiplyMatrix(glm::mat4 model) {
 	updateMVP();
 }
 
-void Rendering::setViewMatrix(float * param1, float * param2, float * param3) {
+void Rendering::setViewMatrix(glm::vec3 pos, glm::vec3 center, glm::vec3 up) {
 	_view = glm::lookAt(
-		glm::vec3(param1[0], param1[1], param1[2]),
-		glm::vec3(param2[0], param2[1], param2[2]),
-		glm::vec3(param3[0], param3[1], param3[2]))
+		pos,
+		center,
+		up)
 		;
 	updateMVP();
 }
