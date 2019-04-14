@@ -22,7 +22,7 @@ public:
 	void walk(float z);
 	void strafe(float x);
 	void update();
-	void cameraInput(bool up, bool down, bool left, bool right,bool w, bool s, bool q, bool e,double deltaTime);
+	void cameraInput(bool up, bool down, bool left, bool right,bool w, bool s, bool q, bool e,bool lShift, bool rShift,double deltaTime);
 	~Camera();
 };
 
