@@ -32,6 +32,7 @@
     <ClInclude Include="GameBase.h" />
     <ClInclude Include="Exports.h" />
     <ClInclude Include="Material.h" />
+    <ClInclude Include="Mesh.h" />
     <ClInclude Include="Rendering.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Sprite.h" />
@@ -56,6 +57,7 @@
     <ClCompile Include="Frames.cpp" />
     <ClCompile Include="GameBase.cpp" />
     <ClCompile Include="Material.cpp" />
+    <ClCompile Include="Mesh.cpp" />
     <ClCompile Include="Rendering.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -82,7 +84,7 @@
     <VCProjectVersion>15.0</VCProjectVersion>
     <ProjectGuid>{D9FE47E3-9189-416A-9C45-42F00E3629CE}</ProjectGuid>
     <RootNamespace>EngineDLL</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">

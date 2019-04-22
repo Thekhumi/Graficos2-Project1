@@ -15,7 +15,7 @@ void Camera::walk(float z) {
 
 void Camera::pitch(float rotX) {
 
-	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotX, glm::vec3(1.0f, 0, 0));
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotX, glm::vec3(_right.x, _right.y, _right.z));
 
 	_forward = rot * _forward;
 	_up = rot * _up;
@@ -26,7 +26,7 @@ void Camera::pitch(float rotX) {
 }
 
 void Camera::yaw(float rotY) {
-	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotY, glm::vec3(0.0f, 1.0f, 0));
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotY, glm::vec3(_up.x, _up.y, _up.z));
 
 	_forward = rot * _forward;
 	_right = rot * _right;
@@ -37,7 +37,7 @@ void Camera::yaw(float rotY) {
 }
 
 void Camera::roll(float rotZ) {
-	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotZ, glm::vec3(0.0f, 0.0f, 1.0f));
+	glm::mat4 rot = glm::rotate(glm::mat4(1.0f), rotZ, glm::vec3(_forward.x, _forward.y, _forward.z));
 
 	_up = rot * _up;
 	_right = rot * _right;

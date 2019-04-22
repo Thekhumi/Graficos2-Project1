@@ -81,6 +81,18 @@ unsigned int Rendering::genBuffer(float* vertex, int size) {
 	glBufferData(GL_ARRAY_BUFFER, size,vertex , GL_STATIC_DRAW);
 	return vertexbuffer;
 }
+
+unsigned int Rendering::genElementBuffer(float * vertex, int size) {
+	// This will identify our vertex buffer
+	unsigned int vertexbuffer;
+	// Generate 1 buffer, put the resulting identifier in vertexbuffer
+	glGenBuffers(1, &vertexbuffer);
+	// The following commands will talk about our 'vertexbuffer' buffer
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexbuffer);
+	// Give our vertices to OpenGL.
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, vertex, GL_STATIC_DRAW);
+	return vertexbuffer;
+}
 void Rendering::destroyBuffer(unsigned int bufferID) {
 	glDeleteBuffers(1,&bufferID);
 }
@@ -90,6 +102,13 @@ bool Rendering::stop() {
 }
 void Rendering::Draw(int bufferID, int size, int type,int attribSize,int attribType) {
 	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
+}
+void Rendering::DrawElements(int bufferID, int size, int type, int attribSize, int attribType) {
+	glDrawElements(attribType,      // mode
+		size,    // count
+		type,   // type
+		(void*)0 // element array buffer offset);
+	);
 }
 
 void Rendering::bind(int bufferID,int attribSize,int attribType) {

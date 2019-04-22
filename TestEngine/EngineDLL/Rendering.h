@@ -30,8 +30,10 @@ public:
 	void clear();
 	void swapBuffer();
 	unsigned int  genBuffer(float* vertex, int size);
+	unsigned int genElementBuffer(float * vertexm, int size);
 	void destroyBuffer(unsigned int bufferID);
 	void Draw(int bufferID, int size,int type, int attribSize, int attribType);
+	void DrawElements(int bufferID, int size, int type, int attribSize, int attribType);
 	void bind(int bufferID, int attribSize, int attribType);
 	void disableVtx(int attribType);
 	void loadMatrix();
