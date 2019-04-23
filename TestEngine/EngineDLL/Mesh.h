@@ -1,8 +1,8 @@
 #pragma once
-#include "Entity.h"
+#include "Shape.h"
 #include "Exports.h"
 class ENGINEDLL_API Mesh :
-	public Entity
+	public Shape
 {
 public:
 	Mesh(Rendering* renderer);

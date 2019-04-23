@@ -2,7 +2,7 @@
 
 
 
-Mesh::Mesh(Rendering * renderer) :Entity(renderer){
+Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 }
 
 
