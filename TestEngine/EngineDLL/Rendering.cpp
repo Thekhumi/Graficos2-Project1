@@ -82,7 +82,7 @@ unsigned int Rendering::genBuffer(float* vertex, int size) {
 	return vertexbuffer;
 }
 
-unsigned int Rendering::genElementBuffer(float * vertex, int size) {
+unsigned int Rendering::genElementBuffer(int * vertex, int size) {
 	// This will identify our vertex buffer
 	unsigned int vertexbuffer;
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
@@ -103,10 +103,10 @@ bool Rendering::stop() {
 void Rendering::Draw(int bufferID, int size, int type,int attribSize,int attribType) {
 	glDrawArrays(type, 0, size); // Starting from vertex 0; 3 vertices total -> 1 triangle
 }
-void Rendering::DrawElements(int bufferID, int size, int type, int attribSize, int attribType) {
-	glDrawElements(attribType,      // mode
+void Rendering::DrawElements(int size, int type) {
+	glDrawElements(type,      // mode
 		size,    // count
-		type,   // type
+		GL_INT,   // type
 		(void*)0 // element array buffer offset);
 	);
 }
@@ -122,6 +122,10 @@ void Rendering::bind(int bufferID,int attribSize,int attribType) {
 		0,                  // stride
 		(void*)0            // array buffer offset
 	);
+}
+
+void Rendering::bindIndex(int bufferIDindex) {
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, bufferIDindex);
 }
 
 void Rendering::disableVtx(int attribType) {

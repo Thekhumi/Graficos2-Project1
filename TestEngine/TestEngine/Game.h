@@ -13,20 +13,14 @@
 #include "Tilemap.h"
 #include "Tile.h"
 #include "Camera.h"
+#include "Mesh.h"
 #include <vector>
 class Game : public GameBase
 {
 private:
 	CollisionManager * Cmanager;
-	Triangle * triangle;
 	Square * square;
-	Sprite * sprite;
-	Sprite * wallSprite;
-	Sprite * victoryScreen;
-	Animation * spriteAnimation;
-	Avatar * Personaje;
-	ColorSquare * colorCube;
-	Circle * circle;
+	Mesh * mesh;
 	Camera * camera;
 protected:
 	bool onStart() override;

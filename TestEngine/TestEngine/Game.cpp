@@ -19,6 +19,9 @@ bool Game::onStart() {
 	square = new Square(_renderer);
 	square->setMaterial(mat);
 	square->setScale(1,1,1);
+	mesh = new Mesh(_renderer);
+	mesh->setMaterial(mat);
+	mesh->setScale(1, 1, 1);
 	camera->setRenderer(_renderer);
 	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f/640.0f, 0.1f, 100.0f);
 	_renderer->setProjectionMatrixOrtho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
@@ -33,7 +36,8 @@ bool Game::onUpdate(double deltaTime) {
 }
 
 void Game::onDraw() {
-	square->Draw();
+	//square->Draw();
+	mesh->Draw();
 }
 
 bool Game::onStop() {
