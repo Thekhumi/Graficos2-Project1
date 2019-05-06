@@ -1,19 +1,44 @@
 #include "Mesh.h"
+#include <iostream>
 
+using namespace std;
 
 
 Mesh::Mesh(Rendering * renderer) :Shape(renderer){
-	_vertex = new float[12]{
-		-0.5f,-0.5f,0.0f,
-		-0.5f,0.5f,0.0f,
-		0.5f,-0.5f,0.0f,
-		0.5f,0.5f,0.0f,
+	_vertex = new float[24]{
+		// front
+	-1.0, -1.0,  1.0,
+	 1.0, -1.0,  1.0,
+	 1.0,  1.0,  1.0,
+	-1.0,  1.0,  1.0,
+	// back
+	-1.0, -1.0, -1.0,
+	 1.0, -1.0, -1.0,
+	 1.0,  1.0, -1.0,
+	-1.0,  1.0, -1.0
 	};
-	_index = new int[6] {
-		0,1,2,2,1,3
+	_index = new int[36] {
+		// front
+		0, 1, 2,
+		2, 3, 0,
+		// right
+		1, 5, 6,
+		6, 2, 1,
+		// back
+		7, 6, 5,
+		5, 4, 7,
+		// left
+		4, 0, 3,
+		3, 7, 4,
+		// bottom
+		4, 5, 1,
+		1, 0, 4,
+		// top
+		3, 2, 6,
+		6, 7, 3
 	};
 	_shouldDispose = false;
-	setVertices(_vertex, 4,6);
+	setVertices(_vertex, 8,36);
 }
 
 void Mesh::setVertices(float* vertex, int vtxcount, int indexcount) {

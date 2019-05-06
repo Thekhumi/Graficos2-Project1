@@ -106,7 +106,7 @@ void Rendering::Draw(int bufferID, int size, int type,int attribSize,int attribT
 void Rendering::DrawElements(int size, int type) {
 	glDrawElements(type,      // mode
 		size,    // count
-		GL_INT,   // type
+		GL_UNSIGNED_INT,   // type
 		(void*)0 // element array buffer offset);
 	);
 }
