@@ -85,10 +85,10 @@ void Camera::cameraInput(bool up, bool down, bool left, bool right,bool w, bool 
 		yaw(-1 * deltatime);
 	}
 	if (lShift) {
-		roll(1 * deltatime);
+		roll(-1 * deltatime);
 	}
 	if (rShift) {
-		roll(-1 * deltatime);
+		roll(1 * deltatime);
 	}
 	//if()
 	//cout << eyeX <<" "<<eyeY << " "<<eyeZ << endl;
