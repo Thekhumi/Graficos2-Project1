@@ -1,7 +1,5 @@
 #include "Square.h"
 
-
-
 Square::Square(Rendering* renderer) :Shape(renderer), _vertex(NULL), _bufferID(-1){
 	_vertex = new float[12]{
 		-0.5f,-0.5f,0.0f,

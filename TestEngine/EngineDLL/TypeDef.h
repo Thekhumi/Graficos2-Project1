@@ -8,3 +8,4 @@
 #pragma comment (lib,"..\\deps\\glew-2.1.0\\lib\\Release\\Win32\\glew32.lib")
 #pragma comment (lib,"opengl32.lib")
 #pragma comment (lib,"glu32.lib")
+#pragma comment (lib,"..\\deps\\assimp\\lib\\assimp-vc140-mt.lib")
