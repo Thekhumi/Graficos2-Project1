@@ -26,13 +26,14 @@
     <ClInclude Include="Circle.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="ColorSquare.h" />
-    <ClInclude Include="Defs.h" />
+    <ClInclude Include="Refs.h" />
     <ClInclude Include="Entity.h" />
     <ClInclude Include="Frames.h" />
     <ClInclude Include="GameBase.h" />
     <ClInclude Include="Exports.h" />
     <ClInclude Include="Material.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="MeshImporter.h" />
     <ClInclude Include="Rendering.h" />
     <ClInclude Include="Shape.h" />
     <ClInclude Include="Sprite.h" />
@@ -58,6 +59,7 @@
     <ClCompile Include="GameBase.cpp" />
     <ClCompile Include="Material.cpp" />
     <ClCompile Include="Mesh.cpp" />
+    <ClCompile Include="MeshImporter.cpp" />
     <ClCompile Include="Rendering.cpp" />
     <ClCompile Include="Shape.cpp" />
     <ClCompile Include="Sprite.cpp" />
@@ -79,6 +81,9 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="EngineDLL.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Object Include="..\TestEngine\Cube.obj" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>

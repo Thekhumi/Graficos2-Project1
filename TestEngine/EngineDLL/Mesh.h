@@ -1,6 +1,14 @@
 #pragma once
 #include "Shape.h"
 #include "Exports.h"
+#include "MeshImporter.h"
+
+struct vertexData {
+	float x;
+	float y;
+	float z;
+	float UV;
+};
 class ENGINEDLL_API Mesh :
 	public Shape
 {
@@ -14,6 +22,7 @@ private:
 public:
 	Mesh(Rendering* renderer);
 	void setVertices(float* vertex, int vtxCount, int indexcount);
+	void loadModel(const char * path);
 	void Draw() override;
 	~Mesh();
 };

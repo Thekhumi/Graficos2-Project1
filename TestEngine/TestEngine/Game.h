@@ -3,7 +3,7 @@
 #include "Triangle.h"
 #include "Square.h"
 #include "Sprite.h"
-#include "Defs.h"
+#include "Refs.h"
 #include "TextureImporter.h"
 #include "Animation.h"
 #include "Avatar.h"

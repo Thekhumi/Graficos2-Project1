@@ -69,6 +69,10 @@ void Mesh::Draw() {
 		_renderer->disableVtx(0);
 	}
 }
+
+void Mesh::loadModel(const char * path) {
+	MeshImporter::importModel(path, _vertex, _index);
+}
 Mesh::~Mesh()
 {
 }
