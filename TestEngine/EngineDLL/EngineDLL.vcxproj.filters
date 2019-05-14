@@ -190,9 +190,4 @@
       <Filter>Archivos de recursos</Filter>
     </ResourceCompile>
   </ItemGroup>
-  <ItemGroup>
-    <Object Include="..\TestEngine\Cube.obj">
-      <Filter>Archivos de recursos</Filter>
-    </Object>
-  </ItemGroup>
 </Project>
