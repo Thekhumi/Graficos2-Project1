@@ -76,7 +76,7 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>$(SolutionDir)EngineDLL\;$(SolutionDir)deps\glew-2.1.0\include;$(SolutionDir)deps\glm-0.9.9.0;$(SolutionDir)deps\glfw-3.2.1\include;C:\Users\Administrador\Desktop\Graficos2-Project1\TestEngine\deps\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)EngineDLL\;$(SolutionDir)deps\glew-2.1.0\include;$(SolutionDir)deps\glm-0.9.9.0;$(SolutionDir)deps\glfw-3.2.1\include;$(SolutionDir)deps\assimp\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
@@ -133,6 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Game.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="CubeUV.png" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

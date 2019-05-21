@@ -13,10 +13,11 @@ class ENGINEDLL_API Mesh :
 	public Shape
 {
 private:
+	vertexData * _vertex2;
 	float*_vertex;
 	int _vtxCount;
 	int _indexCount;
-	int* _index;
+	unsigned int* _index;
 	unsigned int _bufferID = -1;
 	unsigned int _bufferIDIndex = -1;
 public:

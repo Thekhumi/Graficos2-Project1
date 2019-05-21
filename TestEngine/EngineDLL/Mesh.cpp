@@ -16,7 +16,7 @@ Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 	 1.0,  1.0, -1.0,
 	-1.0,  1.0, -1.0
 	};
-	_index = new int[36] {
+	_index = new unsigned int[36] {
 		// front
 		0, 1, 2,
 		2, 3, 0,
@@ -50,7 +50,7 @@ void Mesh::setVertices(float* vertex, int vtxcount, int indexcount) {
 	_shouldDispose = true;
 
 	_bufferID = _renderer->genBuffer(_vertex, sizeof(float) * vtxcount * 3);
-	_bufferIDIndex = _renderer->genElementBuffer(_index, sizeof(int) * indexcount);
+	_bufferIDIndex = _renderer->genElementBuffer(_index, sizeof(unsigned int) * indexcount);
 }
 
 void Mesh::Draw() {

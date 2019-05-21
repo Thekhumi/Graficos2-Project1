@@ -82,7 +82,7 @@ unsigned int Rendering::genBuffer(float* vertex, int size) {
 	return vertexbuffer;
 }
 
-unsigned int Rendering::genElementBuffer(int * vertex, int size) {
+unsigned int Rendering::genElementBuffer(unsigned int * index, int size) {
 	// This will identify our vertex buffer
 	unsigned int vertexbuffer;
 	// Generate 1 buffer, put the resulting identifier in vertexbuffer
@@ -90,7 +90,7 @@ unsigned int Rendering::genElementBuffer(int * vertex, int size) {
 	// The following commands will talk about our 'vertexbuffer' buffer
 	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, vertexbuffer);
 	// Give our vertices to OpenGL.
-	glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, vertex, GL_STATIC_DRAW);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, size, index, GL_STATIC_DRAW);
 	return vertexbuffer;
 }
 void Rendering::destroyBuffer(unsigned int bufferID) {
