@@ -24,16 +24,21 @@ bool MeshImporter::importModel(const char * path, float *_vertex, unsigned int *
 		return false;
 	}
 	if (scene->HasMeshes()) {
-		VertexData * vertexData = new VertexData[scene->mMeshes[0]->mNumVertices];
-		VertexData * pvertex = vertexData;
-		for (int i = 0; i < scene->mMeshes[0]->mNumVertices; i++) {
-			pvertex->x = scene->mMeshes[0]->mVertices[i].x;
-		 	pvertex->y = scene->mMeshes[0]->mVertices[i].y;
-			pvertex->z = scene->mMeshes[0]->mVertices[i].z;
-			pvertex++;
+		unsigned int cantIndex = scene->mMeshes[0]->mNumFaces * 3;
+		unsigned int cantVertex = scene->mMeshes[0]->mNumVertices;
+		float * vertexData = new float[cantVertex];
+		float * pvertex = vertexData;
+		for (int i = 0; i < cantVertex; i++) {
+			*pvertex = scene->mMeshes[0]->mVertices[i].x;
+			 pvertex++;
+			 *pvertex = scene->mMeshes[0]->mVertices[i].y;
+			 pvertex++;
+			 *pvertex = scene->mMeshes[0]->mVertices[i].z;
+			 pvertex++;
+
 		}
-		cout << scene->mMeshes[0]->mTextureCoords[0][0].x << endl;
-		cout << scene->mMeshes[0]->mTextureCoords[0][0].y << endl;
+		//cout << scene->mMeshes[0]->mTextureCoords[0][0].x << endl;
+		//cout << scene->mMeshes[0]->mTextureCoords[0][0].y << endl;
 
 
 		_index = scene->mMeshes[0]->mFaces->mIndices;

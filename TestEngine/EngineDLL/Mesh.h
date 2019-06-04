@@ -3,17 +3,12 @@
 #include "Exports.h"
 #include "MeshImporter.h"
 
-struct vertexData {
-	float x;
-	float y;
-	float z;
-	float UV;
-};
+
 class ENGINEDLL_API Mesh :
 	public Shape
 {
 private:
-	vertexData * _vertex2;
+	float*_vertexUV;
 	float*_vertex;
 	int _vtxCount;
 	int _indexCount;

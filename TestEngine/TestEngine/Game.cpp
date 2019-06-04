@@ -22,7 +22,7 @@ bool Game::onStart() {
 	mesh = new Mesh(_renderer);
 	mesh->setMaterial(mat);
 	mesh->setScale(1, 1, 1);
-	mesh->loadModel("nanosuit.obj");
+	mesh->loadModel("Cube.obj");
 	camera->setRenderer(_renderer);
 	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f/640.0f, 0.1f, 100.0f);
 	_renderer->setProjectionMatrixOrtho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
