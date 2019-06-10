@@ -4,6 +4,8 @@ using namespace std;
 
 
 Mesh::Mesh(Rendering * renderer) :Shape(renderer){
+	_index = NULL;
+	_vertex = NULL;
 	_vertex = new float[24]{
 		// front
 	-1.0, -1.0,  1.0,
@@ -36,6 +38,7 @@ Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 		3, 2, 6,
 		6, 7, 3
 	};
+	
 	_shouldDispose = false;
 	setVertices(_vertex, 8,36);
 }
@@ -43,6 +46,7 @@ Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 void Mesh::setVertices(float* vertex, int vtxcount, int indexcount) {
 	if (_shouldDispose) {
 		dispose();
+		_renderer->destroyBuffer(_bufferIDIndex);
 	}
 	_vertex = vertex;
 	_vtxCount = vtxcount;
@@ -71,7 +75,12 @@ void Mesh::Draw() {
 }
 
 void Mesh::loadModel(const char * path) {
-	MeshImporter::importModel(path, _vertex, _index);
+	if(_index != NULL && _vertex != NULL){
+		delete _index;
+		delete _vertex;
+	}
+	MeshImporter::importModel(path, &_vertex,_vtxCount, &_index, _indexCount);
+	setVertices(_vertex, _vtxCount, _indexCount);
 }
 Mesh::~Mesh()
 {

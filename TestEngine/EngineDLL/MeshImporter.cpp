@@ -6,7 +6,7 @@ MeshImporter::MeshImporter()
 {
 }
 
-bool MeshImporter::importModel(const char * path, float *_vertex, unsigned int * _index) {
+bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCount, unsigned int** _index, int & _indexCount) {
 	// Create an instance of the Importer class
 	Importer importer;
 	// And have it read the given file with some example postprocessing
@@ -26,7 +26,7 @@ bool MeshImporter::importModel(const char * path, float *_vertex, unsigned int *
 	if (scene->HasMeshes()) {
 		unsigned int cantIndex = scene->mMeshes[0]->mNumFaces * 3;
 		unsigned int cantVertex = scene->mMeshes[0]->mNumVertices;
-		float * vertexData = new float[cantVertex];
+		float * vertexData = new float[cantVertex * 3];
 		float * pvertex = vertexData;
 		for (int i = 0; i < cantVertex; i++) {
 			*pvertex = scene->mMeshes[0]->mVertices[i].x;
@@ -35,13 +35,22 @@ bool MeshImporter::importModel(const char * path, float *_vertex, unsigned int *
 			 pvertex++;
 			 *pvertex = scene->mMeshes[0]->mVertices[i].z;
 			 pvertex++;
-
 		}
-		//cout << scene->mMeshes[0]->mTextureCoords[0][0].x << endl;
-		//cout << scene->mMeshes[0]->mTextureCoords[0][0].y << endl;
+		unsigned int * indexData = new unsigned int[cantIndex];
+		unsigned int * pIndex = indexData;
+		for (int i = 0; i < scene->mMeshes[0]->mNumFaces; i++){
+			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[0];
+			pIndex++;
+			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[1];
+			pIndex++;
+			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[2];
+			pIndex++;
+		}
+		*_vertex = vertexData;
+		_vtxCount = cantVertex;
+		_indexCount = cantIndex;
+		*_index = indexData;
 
-
-		_index = scene->mMeshes[0]->mFaces->mIndices;
 	}
 	return true;
 }
