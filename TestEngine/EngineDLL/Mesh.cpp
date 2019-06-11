@@ -57,6 +57,9 @@ void Mesh::setVertices(float* vertex, int vtxcount, int indexcount) {
 	_bufferIDIndex = _renderer->genElementBuffer(_index, sizeof(unsigned int) * indexcount);
 }
 
+void Mesh::loadTexture(const char * imagepath, bool hasAlphaC) {
+	_texture = TextureImporter::loadBMP(imagepath, hasAlphaC);
+}
 void Mesh::Draw() {
 
 	if (_shouldDispose) {
