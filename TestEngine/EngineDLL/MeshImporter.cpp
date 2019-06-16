@@ -6,12 +6,10 @@ MeshImporter::MeshImporter()
 {
 }
 
-bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCount, unsigned int** _index, int & _indexCount) {
-	// Create an instance of the Importer class
+bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCount, unsigned int** _index, int & _indexCount, float ** _vertexUV, int & _vertexUVCount) {
+
 	Importer importer;
-	// And have it read the given file with some example postprocessing
-	// Usually - if speed is not the most important aspect for you - you'll 
-	// propably to request more postprocessing than we do in this example.
+
 	const aiScene* scene = importer.ReadFile(path,
 		aiProcess_CalcTangentSpace |
 		aiProcess_Triangulate |
@@ -24,33 +22,54 @@ bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCou
 		return false;
 	}
 	if (scene->HasMeshes()) {
+		// Numbers of Index/Vertex
 		unsigned int cantIndex = scene->mMeshes[0]->mNumFaces * 3;
 		unsigned int cantVertex = scene->mMeshes[0]->mNumVertices;
+		unsigned int cantUV = cantVertex;
+		//Vertex
 		float * vertexData = new float[cantVertex * 3];
-		float * pvertex = vertexData;
+		int numVtx = 0;
 		for (int i = 0; i < cantVertex; i++) {
-			*pvertex = scene->mMeshes[0]->mVertices[i].x;
-			 pvertex++;
-			 *pvertex = scene->mMeshes[0]->mVertices[i].y;
-			 pvertex++;
-			 *pvertex = scene->mMeshes[0]->mVertices[i].z;
-			 pvertex++;
+			vertexData[numVtx++] = scene->mMeshes[0]->mVertices[i].x;
+			//cout << vertexData[numVtx - 1] << ", ";
+			vertexData[numVtx++] = scene->mMeshes[0]->mVertices[i].y;
+			//cout << vertexData[numVtx - 1] << ", ";
+			vertexData[numVtx++] = scene->mMeshes[0]->mVertices[i].z;
+			//cout << vertexData[numVtx - 1] << ".";
+			//cout << endl;
 		}
+		//Index
 		unsigned int * indexData = new unsigned int[cantIndex];
-		unsigned int * pIndex = indexData;
+		int numIndex = 0;
 		for (int i = 0; i < scene->mMeshes[0]->mNumFaces; i++){
-			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[0];
-			pIndex++;
-			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[1];
-			pIndex++;
-			*pIndex = scene->mMeshes[0]->mFaces[i].mIndices[2];
-			pIndex++;
+			indexData[numIndex++] = scene->mMeshes[0]->mFaces[i].mIndices[0];
+			//cout << indexData[numIndex - 1] << ", ";
+			indexData[numIndex++] = scene->mMeshes[0]->mFaces[i].mIndices[1];
+			//cout << indexData[numIndex - 1] << ", ";
+			indexData[numIndex++] = scene->mMeshes[0]->mFaces[i].mIndices[2];
+			//cout << indexData[numIndex - 1] << ".";
+			//cout << endl;
 		}
+		//UV
+		float * UVData = new float[cantUV];
+		int numUV = 0;
+		for (int i = 0; i < cantUV; i++){
+			UVData[numUV++] = scene->mMeshes[0]->mTextureCoords[0][i].x;
+			cout << UVData[numUV - 1] << ", ";
+			UVData[numUV++] = scene->mMeshes[0]->mTextureCoords[0][i].y;
+			cout << UVData[numUV - 1] << ".";
+			cout << endl;
+		}
+		//copying values to originals
+		//vertex
 		*_vertex = vertexData;
-		_vtxCount = cantVertex;
+		_vtxCount = cantVertex / 3;
+		//UV
+		*_vertexUV = UVData;
+		_vertexUVCount = cantUV;
+		//INDEX
 		_indexCount = cantIndex;
 		*_index = indexData;
-
 	}
 	return true;
 }

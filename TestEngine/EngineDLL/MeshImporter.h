@@ -10,7 +10,8 @@ class ENGINEDLL_API MeshImporter
 {
 public:
 	MeshImporter();
-	bool static importModel(const char * path, float **_vertex, int & _vtxCount,unsigned int** _index, int & _indexCount);
+	bool static importModel(const char * path, float **_vertex, int & _vtxCount,
+		unsigned int** _index, int & _indexCount, float ** _vertexUV, int & _vertexUVCount);
 	~MeshImporter();
 };
 

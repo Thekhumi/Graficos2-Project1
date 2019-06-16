@@ -6,6 +6,8 @@ using namespace std;
 Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 	_index = NULL;
 	_vertex = NULL;
+	_vertexUV = NULL;
+	_texture = NULL;
 	_vertex = new float[24]{
 		// front
 	-1.0, -1.0,  1.0,
@@ -38,27 +40,27 @@ Mesh::Mesh(Rendering * renderer) :Shape(renderer){
 		3, 2, 6,
 		6, 7, 3
 	};
+	_vtxCount = 8;
+	_indexCount = 36;
 	
 	_shouldDispose = false;
-	setVertices(_vertex, 8,36);
+	setVertices();
 }
 
-void Mesh::setVertices(float* vertex, int vtxcount, int indexcount) {
+void Mesh::setVertices() {
 	if (_shouldDispose) {
 		dispose();
 		_renderer->destroyBuffer(_bufferIDIndex);
 	}
-	_vertex = vertex;
-	_vtxCount = vtxcount;
-	_indexCount = indexcount;
 	_shouldDispose = true;
 
-	_bufferID = _renderer->genBuffer(_vertex, sizeof(float) * vtxcount * 3);
-	_bufferIDIndex = _renderer->genElementBuffer(_index, sizeof(unsigned int) * indexcount);
+	_bufferID = _renderer->genBuffer(_vertex, sizeof(float) * _vtxCount * 3);
+	_bufferIDIndex = _renderer->genElementBuffer(_index, sizeof(unsigned int) * _indexCount);
 }
 
 void Mesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 	_texture = TextureImporter::loadBMP(imagepath, hasAlphaC);
+	_bufferUV = _renderer->genBuffer(_vertexUV, sizeof(float)* _vertexUVCount * 2);
 }
 void Mesh::Draw() {
 
@@ -69,21 +71,32 @@ void Mesh::Draw() {
 		{
 			_material->bind();
 			_material->setMatrixProperty(_renderer->getMVP());
+			if(_texture != NULL)
+			_material->bindTexture(_texture->getTextureID());
 		}
 		_renderer->bind(_bufferID, 3, 0);
+		if (_texture) {
+			_renderer->bind(_bufferUV, 2, 1);
+		}
 		_renderer->bindIndex(_bufferIDIndex);
 		_renderer->DrawElements(_indexCount, GL_TRIANGLES);
 		_renderer->disableVtx(0);
+		if (_texture != NULL) {
+			_renderer->disableVtx(1);
+		}
 	}
 }
 
 void Mesh::loadModel(const char * path) {
-	if(_index != NULL && _vertex != NULL){
-		delete _index;
-		delete _vertex;
-	}
-	MeshImporter::importModel(path, &_vertex,_vtxCount, &_index, _indexCount);
-	setVertices(_vertex, _vtxCount, _indexCount);
+	//delete originals
+	if (_vertex != NULL)
+		delete[] _vertex;
+	if (_index != NULL)
+		delete[] _index;
+	if (_vertexUV != NULL)
+		delete[] _vertexUV;
+	MeshImporter::importModel(path, &_vertex,_vtxCount, &_index, _indexCount,&_vertexUV,_vertexUVCount);
+	setVertices();
 }
 Mesh::~Mesh()
 {
