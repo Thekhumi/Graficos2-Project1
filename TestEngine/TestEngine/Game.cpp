@@ -20,7 +20,7 @@ bool Game::onStart() {
 	mesh->setMaterial(mat);
 	mesh->setScale(1, 1, 1);
 	mesh->loadModel("Cube.obj");
-	//mesh->loadTexture("CubeTex.bmp",false);
+	mesh->loadTexture("CubeTex.bmp",false);
 	camera->setRenderer(_renderer);
 	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f/640.0f, 0.1f, 100.0f);
 	_renderer->setProjectionMatrixOrtho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);

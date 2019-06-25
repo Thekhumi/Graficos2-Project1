@@ -51,7 +51,7 @@ bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCou
 			//cout << endl;
 		}
 		//UV
-		float * UVData = new float[cantUV];
+		float * UVData = new float[cantUV * 2];
 		int numUV = 0;
 		for (int i = 0; i < cantUV; i++){
 			UVData[numUV++] = scene->mMeshes[0]->mTextureCoords[0][i].x;
@@ -63,7 +63,7 @@ bool MeshImporter::importModel(const char * path, float **_vertex, int & _vtxCou
 		//copying values to originals
 		//vertex
 		*_vertex = vertexData;
-		_vtxCount = cantVertex / 3;
+		_vtxCount = cantVertex;
 		//UV
 		*_vertexUV = UVData;
 		_vertexUVCount = cantUV;

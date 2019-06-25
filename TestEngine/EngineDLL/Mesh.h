@@ -25,6 +25,11 @@ public:
 	void loadModel(const char * path);
 	void loadTexture(const char * imagepath, bool hasAlphaC);
 	void Draw() override;
+	float * getVertex() { return _vertex; };
+	void setVertex(float * vertex) { _vertex = vertex; };
+	unsigned int * getIndex() { return _index; };
+	void setIndex(unsigned int * index) { _index = index; };
+
 	~Mesh();
 };
 
