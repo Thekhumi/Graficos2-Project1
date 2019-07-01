@@ -15,7 +15,7 @@ Game::~Game()
 bool Game::onStart() {
 	cout << "-OnStart-";
 	camera = new Camera();
-	Material * mat = Material::loadMaterial(VERTEX_SHADER_PATH, FRAGMENT_SHADER_PATH);
+	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
 	mesh = new Mesh(_renderer);
 	mesh->setMaterial(mat);
 	mesh->setScale(1, 1, 1);
