@@ -1,5 +1,6 @@
 #pragma once
 #include "GameBase.h"
+#include "Nodo.h"
 #include "Triangle.h"
 #include "Square.h"
 #include "Sprite.h"
@@ -13,6 +14,7 @@
 #include "Tilemap.h"
 #include "Tile.h"
 #include "Camera.h"
+#include "CompCamera.h"
 #include "Mesh.h"
 #include <vector>
 class Game : public GameBase
@@ -21,7 +23,8 @@ private:
 	CollisionManager * Cmanager;
 	Square * square;
 	Mesh * mesh;
-	Camera * camera;
+	Camera * oldCamera;
+	Nodo * escena;
 protected:
 	bool onStart() override;
 	bool onStop() override;

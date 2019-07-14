@@ -2,10 +2,9 @@
 #include "Component.h"
 #include "exports.h"
 #include "Rendering.h"
-class ENGINEDLL_API CompCamera :
-	public Component
+
+class ENGINEDLL_API CompCamera : public Component
 {
-private:
 private:
 
 	//directions
@@ -26,7 +25,7 @@ public:
 	void roll(float zRot);
 	void walk(float z);
 	void strafe(float x);
-	void update();
+	void update() override;
 	void cameraInput(bool up, bool down, bool left, bool right, bool w, bool s, bool q, bool e, bool lShift, bool rShift, double deltaTime);
 	~CompCamera();
 };

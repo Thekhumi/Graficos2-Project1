@@ -4,8 +4,9 @@
 using namespace std;
 
 
-CompCamera::CompCamera()
+CompCamera::CompCamera() :Component()
 {
+	setType(CCamera);
 }
 
 void CompCamera::walk(float z) {

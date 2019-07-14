@@ -27,6 +27,7 @@
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="ColorSquare.h" />
     <ClInclude Include="CompCamera.h" />
+    <ClInclude Include="CompMesh.h" />
     <ClInclude Include="Component.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="Refs.h" />
@@ -58,6 +59,7 @@
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="ColorSquare.cpp" />
     <ClCompile Include="CompCamera.cpp" />
+    <ClCompile Include="CompMesh.cpp" />
     <ClCompile Include="Component.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="Frames.cpp" />

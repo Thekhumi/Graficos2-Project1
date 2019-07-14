@@ -1,15 +1,19 @@
 #pragma once
-#include <vector>
+#include "Exports.h"
+#include "Component.h"
+#include "CompCamera.h"
 #include "Rendering.h"
 #include <gl\glew.h>
-#include "Component.h"
+#include <vector>
+
 
 using namespace std;
-class Nodo
+class ENGINEDLL_API Nodo
 {
 private:
-	vector<Component> * _components;
-	vector<Nodo> * _nodes;
+	vector<Component*> _components;
+	vector<Nodo*> _nodes;
+	const char * _name;
 
 protected:
 //transform
@@ -29,9 +33,20 @@ protected:
 		_modelMat = _translateMat * _rotateXMat * _rotateYMat * _rotateZMat * _scaleMat;
 	}
 public:
-	Nodo();
-	virtual void update();
-	virtual void draw();
+	Nodo(const char * name);
+	void setName(const char * name) {
+		_name = name;
+	}
+	const  char * getName() { return _name; };
+	void update();
+	void draw() {};
+	//Nodes
+	void AddChild(Nodo* newChild);
+	void RemoveChild(const char* name);
+	Nodo * getNodo(const char * name);
+	bool addComponent(ComponentType type);
+	bool removeComponent(ComponentType type);
+	Component * getComponent(ComponentType type);
 
 
 
@@ -112,6 +127,7 @@ public:
 	glm::vec3 getRotation() {
 		return _rotation;
 	}
+
 	~Nodo();
 };
 
