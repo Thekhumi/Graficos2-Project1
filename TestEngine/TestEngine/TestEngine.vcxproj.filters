@@ -31,5 +31,14 @@
     <Image Include="CubeTex.bmp">
       <Filter>Archivos de recursos</Filter>
     </Image>
+    <Image Include="cannon.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="car.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
+    <Image Include="cabin.bmp">
+      <Filter>Archivos de recursos</Filter>
+    </Image>
   </ItemGroup>
 </Project>

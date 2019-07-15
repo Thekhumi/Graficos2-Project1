@@ -34,22 +34,33 @@ bool Game::onStart() {
 	meshNodo->AddChild(meshNodo2);
 	
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
-	MeshImporter::importModel(&meshImport,"Cube.obj",_renderer);
+	MeshImporter::importModel(&meshImport,"Tank.obj",_renderer);
 	escena->AddChild(meshImport);
+
 	CompMesh * meshImp = (CompMesh*)meshImport->getComponent(CMesh);
-	//mesh = new Mesh(_renderer);
-	//mesh->setMaterial(mat);
-	//mesh->setScale(1, 1, 1);
-	//mesh->loadModel("Cube.obj");
-	//mesh->loadTexture("CubeTex.bmp",false);
-	
 	//Punteros a Component
 	camera = (CompCamera*)camNodo->getComponent(CCamera);
 	camera->setRenderer(_renderer);
 	meshC = (CompMesh*)meshNodo->getComponent(CMesh);
+	//cabin
 	meshImp->init(_renderer);
 	meshImp->setMaterial(mat);
-	meshImp->loadTexture("CubeTex.bmp", false);
+	meshImp->loadTexture("car.bmp", false);
+	//cabin
+	Nodo * nodoMesh2 = meshImport->getNodo("esh");
+	nodoMesh2->setPosY(nodoMesh2->getPosY() + 2);
+	CompMesh * meshImp2 = (CompMesh*)nodoMesh2->getComponent(CMesh);
+	meshImp2->init(_renderer);
+	meshImp2->setMaterial(mat);
+	meshImp2->loadTexture("cabin.bmp", false);
+	//cannon
+	Nodo * nodoMesh3 = meshImport->getNodo("sh");
+	nodoMesh3->setPosY(nodoMesh3->getPosY() + 2);
+	CompMesh * meshImp3 = (CompMesh*)nodoMesh3->getComponent(CMesh);
+	meshImp3->init(_renderer);
+	meshImp3->setMaterial(mat);
+	meshImp3->loadTexture("cannon.bmp", false);
+	
 	meshC->init(_renderer);
 	meshC->setMaterial(mat);
 	meshC->loadModel("Cube.obj");
@@ -73,7 +84,7 @@ bool Game::onUpdate(double deltaTime) {
 	camera->cameraInput(input(265), input(264), input(263), input(262), input(87), input(83), input(81), input(69), input(340), input(344), deltaTime);
 	Nodo * meshNodo = escena->getNodo("Mesh");
 	meshNodo->setPosX(meshNodo->getPosX() + 0.5f * deltaTime);
-	meshImport->setPosY(meshImport->getPosY() + 0.5f * deltaTime);
+	meshImport->setPosY(meshImport->getPosY() + 0.0f * deltaTime);
 	return true;
 }
 

@@ -83,7 +83,7 @@ Nodo * Nodo::getNodo(const char * name) {
 		cout << "ERROR: Nodo no tiene hijos" << endl;
 	}
 	for (int i = 0; i < _nodes.size(); i++){
-		if (_nodes[i]->getName() == name) {
+		if (*_nodes[i]->getName() == *name) {
 			return _nodes[i];
 		}
 	}
@@ -167,11 +167,13 @@ bool Nodo::removeComponent(ComponentType type) {
 }
 
 Component * Nodo::getComponent(ComponentType type) {
+	cout << _components.size();
 	for (int i = 0; i < _components.size(); i++){
 		if (_components[i]->getType() == type) {
 			return _components[i];
 		}
 	}
+	cout << "ERROR: NO SE ENCONTRO EL COMPONENTE" << endl;
 	return NULL;
 }
 Nodo::~Nodo(){

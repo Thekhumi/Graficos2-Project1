@@ -135,6 +135,9 @@
     <ClInclude Include="Game.h" />
   </ItemGroup>
   <ItemGroup>
+    <Image Include="cabin.bmp" />
+    <Image Include="cannon.bmp" />
+    <Image Include="car.bmp" />
     <Image Include="CubeTex.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

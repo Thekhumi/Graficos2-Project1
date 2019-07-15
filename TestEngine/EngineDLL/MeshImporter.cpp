@@ -96,7 +96,7 @@ void MeshImporter::importModel(Nodo ** baseNode, const char * path, Rendering * 
 	Nodo * firstNodo = NULL;
 	if (scene->HasMeshes()) {
 		do{
-			nodo = new Nodo(name + contMeshes, renderer);
+			nodo = new Nodo(name + (char)contMeshes, renderer);
 			if (firstNodo == NULL) {
 				firstNodo = nodo;
 			}
