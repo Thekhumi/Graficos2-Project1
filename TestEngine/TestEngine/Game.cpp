@@ -42,7 +42,6 @@ bool Game::onStart() {
 	Body = (CompMesh*)NodoBody->getComponent(CMesh);
 	//Punteros a Component
 	camera = (CompCamera*)camNodo->getComponent(CCamera);
-	camera->setRenderer(_renderer);
 	meshC = (CompMesh*)meshNodo->getComponent(CMesh);
 	//Body
 	Body->setMaterial(mat);

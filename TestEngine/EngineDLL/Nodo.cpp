@@ -112,6 +112,7 @@ bool Nodo::addComponent(ComponentType type) {
 	{
 		CompCamera * camera = new CompCamera();
 		camera->setType(CCamera);
+		camera->setRenderer(_renderer);
 		_components.push_back(camera);
 		break;
 	}
@@ -144,6 +145,7 @@ bool Nodo::attachComponent(ComponentType type, Component * component) {
 	{
 		CompCamera * camera = (CompCamera*)component;
 		camera->setType(CCamera);
+		camera->setRenderer(_renderer);
 		_components.push_back(camera);
 		break;
 	}
