@@ -4,6 +4,7 @@
 #include "assimp/scene.h"	
 #include "assimp/postprocess.h"
 #include "Mesh.h"
+#include "CompMesh.h"
 #include <iostream>
 using namespace Assimp;
 class ENGINEDLL_API MeshImporter

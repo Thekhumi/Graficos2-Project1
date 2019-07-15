@@ -2,6 +2,7 @@
 #include "Exports.h"
 #include "Component.h"
 #include "CompCamera.h"
+#include "CompMesh.h"
 #include "Rendering.h"
 #include <gl\glew.h>
 #include <vector>

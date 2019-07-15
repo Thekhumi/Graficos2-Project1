@@ -1,13 +1,46 @@
 #pragma once
 #include "Component.h"
 #include "Exports.h"
+#include "MeshImporter.h"
+#include "TextureImporter.h"
 class ENGINEDLL_API CompMesh :
 	public Component
 {
+private:
+	bool _shouldDispose;
+	Material* _material;
+	
+	Rendering * _renderer;
+
+	glm::mat4 * _modelMat;
+
+	float *_vertexUV;
+	float *_vertex;
+	int _vtxCount;
+	int _vertexUVCount;
+	int _indexCount;
+	unsigned int * _index;
+	unsigned int _bufferID = -1;
+	unsigned int _bufferUV = -1;
+	unsigned int _bufferIDIndex = -1;
+	Texture * _texture;
+
 public:
 	CompMesh();
-	void draw() override {};
+	void draw() override;
 	void update() override {};
+
+	//mesh
+	void init(Rendering * renderer);
+	void setVertices();
+	void loadModel(const char * path);
+	void loadTexture(const char * imagepath, bool hasAlphaC);
+	float * getVertex() { return _vertex; };
+	void setVertex(float * vertex) { _vertex = vertex; };
+	unsigned int * getIndex() { return _index; };
+	void setIndex(unsigned int * index) { _index = index; };
+	void setModelMat(glm::mat4 * modelMat) { _modelMat = modelMat; };
+	void setMaterial(Material * mat) { _material = mat; };
 	~CompMesh();
 };
 

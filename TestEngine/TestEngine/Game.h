@@ -14,7 +14,6 @@
 #include "Tilemap.h"
 #include "Tile.h"
 #include "Camera.h"
-#include "CompCamera.h"
 #include "Mesh.h"
 #include <vector>
 class Game : public GameBase
@@ -23,7 +22,8 @@ private:
 	CollisionManager * Cmanager;
 	Square * square;
 	Mesh * mesh;
-	Camera * oldCamera;
+	CompCamera * camera;
+	CompMesh * meshC;
 	Nodo * escena;
 protected:
 	bool onStart() override;

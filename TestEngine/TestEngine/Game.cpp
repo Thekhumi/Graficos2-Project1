@@ -14,23 +14,31 @@ Game::~Game()
 
 bool Game::onStart() {
 	cout << "-OnStart-" << endl;
+	//nodos
 	escena = new Nodo("Escena");
-	Nodo * camara = new Nodo("Camara");
-	camara->addComponent(CCamera);
-	escena->AddChild(camara);
+	Nodo * camNodo = new Nodo("Camara");
+	Nodo * meshNodo = new Nodo("Mesh");
+	camNodo->addComponent(CCamera);
+	meshNodo->addComponent(CMesh);
+	escena->AddChild(camNodo);
+	escena->AddChild(meshNodo);
 	
-	
-	//oldCamera = new Camera();
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
-	mesh = new Mesh(_renderer);
-	mesh->setMaterial(mat);
-	mesh->setScale(1, 1, 1);
-	mesh->loadModel("Cube.obj");
-	mesh->loadTexture("CubeTex.bmp",false);
-	//oldCamera->setRenderer(_renderer);
-	CompCamera * asd = (CompCamera*)camara->getComponent(CCamera);
-	asd->setRenderer(_renderer);
-
+	//mesh = new Mesh(_renderer);
+	//mesh->setMaterial(mat);
+	//mesh->setScale(1, 1, 1);
+	//mesh->loadModel("Cube.obj");
+	//mesh->loadTexture("CubeTex.bmp",false);
+	
+	//Punteros a Component
+	camera = (CompCamera*)camNodo->getComponent(CCamera);
+	camera->setRenderer(_renderer);
+	meshC = (CompMesh*)meshNodo->getComponent(CMesh);
+	meshC->init(_renderer);
+	meshC->setMaterial(mat);
+	meshC->loadModel("Cube.obj");
+	meshC->loadTexture("CubeTex.bmp", false);
+	
 	//(CompCamera*)camara->getComponent(CCamera)->setRenderer(_renderer);
 
 	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f/640.0f, 0.1f, 100.0f);
@@ -40,14 +48,13 @@ bool Game::onStart() {
 }
 
 bool Game::onUpdate(double deltaTime) {
-	//oldCamera->cameraInput(input(265),input(264),input(263), input(262) , input(87), input(83), input(81),input (69),input(340),input(344	),deltaTime);
-	CompCamera * asd = (CompCamera*)escena->getNodo("Camara")->getComponent(CCamera);
-	asd->cameraInput(input(265), input(264), input(263), input(262), input(87), input(83), input(81), input(69), input(340), input(344), deltaTime);
+	camera->cameraInput(input(265), input(264), input(263), input(262), input(87), input(83), input(81), input(69), input(340), input(344), deltaTime);
 	return true;
 }
 
 void Game::onDraw() {
-	mesh->Draw();
+	//mesh->Draw();
+	meshC->draw();
 }
 
 bool Game::onStop() {

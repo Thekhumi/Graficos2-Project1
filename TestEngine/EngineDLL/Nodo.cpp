@@ -5,6 +5,16 @@ using namespace std;
 
 
 Nodo::Nodo(const char * name): _name(name){
+	_position[0] = _position[1] = _position[2] = 0.0f;
+	_rotation[0] = _rotation[1] = _rotation[2] = 0.0f;
+	_scale[0] = _scale[1] = _scale[2] = 1.0f;
+
+	_modelMat = glm::mat4(1.0f);
+	_translateMat = glm::mat4(1.0f);
+	_rotateXMat = glm::mat4(1.0f);
+	_rotateYMat = glm::mat4(1.0f);
+	_rotateZMat = glm::mat4(1.0f);
+	_scaleMat = glm::mat4(1.0f);
 }
 
 void Nodo::update() {
@@ -78,12 +88,16 @@ bool Nodo::addComponent(ComponentType type) {
 	case CCamera:
 	{
 		CompCamera * camera = new CompCamera();
+		camera->setType(CCamera);
 		_components.push_back(camera);
 		break;
 	}
 	case CMesh:
 	{
-		//CODIGO
+		CompMesh * mesh = new CompMesh();
+		mesh->setType(CMesh);
+		mesh->setModelMat(&_modelMat);
+		_components.push_back(mesh);
 		break;
 	}
 	default:
