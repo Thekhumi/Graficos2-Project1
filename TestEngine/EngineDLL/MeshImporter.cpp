@@ -77,7 +77,6 @@ bool MeshImporter::importModelOld(const char * path, float **_vertex, int & _vtx
 
 void MeshImporter::importModel(Nodo ** baseNode, const char * path, Rendering * renderer) {
 	Importer importer;
-	const char * name = "Mesh";
 
 	const aiScene* scene = importer.ReadFile(path,
 		aiProcess_CalcTangentSpace |
@@ -94,9 +93,11 @@ void MeshImporter::importModel(Nodo ** baseNode, const char * path, Rendering * 
 	int contMeshes = 0;
 	Nodo * nodo = NULL;
 	Nodo * firstNodo = NULL;
+	Nodo * prevNodo = NULL;
 	if (scene->HasMeshes()) {
 		do{
-			nodo = new Nodo(name + (char)contMeshes, renderer);
+			prevNodo = nodo;
+			nodo = new Nodo("Mesh", renderer);
 			if (firstNodo == NULL) {
 				firstNodo = nodo;
 			}
@@ -121,9 +122,9 @@ void MeshImporter::importModel(Nodo ** baseNode, const char * path, Rendering * 
 			float * UVData = new float[cantUV * 2];
 			int numUV = 0;
 			for (int i = 0; i < cantUV; i++) {
-				UVData[numUV++] = scene->mMeshes[0]->mTextureCoords[0][i].x;
+				UVData[numUV++] = scene->mMeshes[contMeshes]->mTextureCoords[0][i].x;
 				cout << UVData[numUV - 1] << ", ";
-				UVData[numUV++] = scene->mMeshes[0]->mTextureCoords[0][i].y;
+				UVData[numUV++] = scene->mMeshes[contMeshes]->mTextureCoords[0][i].y;
 				cout << UVData[numUV - 1] << ".";
 				cout << endl;
 			}
@@ -143,7 +144,7 @@ void MeshImporter::importModel(Nodo ** baseNode, const char * path, Rendering * 
 
 			nodo->attachComponent(CMesh, mesh);
 			if (contMeshes != 0) {
-				firstNodo->AddChild(nodo);
+				prevNodo->AddChild(nodo);
 			}
 			contMeshes++;
 		} while (contMeshes < numMeshes);

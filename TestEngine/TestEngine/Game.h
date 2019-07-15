@@ -20,14 +20,19 @@ class Game : public GameBase
 {
 private:
 	CollisionManager * Cmanager;
-	Square * square;
-	Mesh * mesh;
 	CompCamera * camera;
 	CompMesh * meshC;
 	CompMesh * meshC2;
 
-	Nodo * meshImport;
 	Nodo * escena;
+
+	//tank
+	CompMesh * Body;
+	Nodo * NodoBody;
+	CompMesh * Cabin;
+	Nodo * NodoCabin;
+	CompMesh * Cannon;
+	Nodo * NodoCannon;
 protected:
 	bool onStart() override;
 	bool onStop() override;

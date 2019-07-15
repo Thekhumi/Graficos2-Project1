@@ -90,6 +90,18 @@ Nodo * Nodo::getNodo(const char * name) {
 	cout << "ERROR: Nodo no encontrado." << endl;
 	return NULL;
 }
+Nodo * Nodo::getNodo(int num) {
+	if (_nodes.size() == 0) {
+		cout << "ERROR: Nodo no tiene hijos" << endl;
+	}
+	if (_nodes.size() < num) {
+		cout << "ERROR: Nodo no tiene hijo " << num << "." << endl;
+	}
+	if (num < 0) {
+		cout << "ERROR: Numero es negativo." << endl;
+	}
+	return _nodes[num];
+}
 bool Nodo::addComponent(ComponentType type) {
 	if (getComponent(type) != NULL) {
 		cout << "COMPONENTE YA EXISTE" << endl;
@@ -108,6 +120,7 @@ bool Nodo::addComponent(ComponentType type) {
 		CompMesh * mesh = new CompMesh();
 		mesh->setType(CMesh);
 		mesh->setModelMat(&_modelMat);
+		mesh->init(_renderer);
 		_components.push_back(mesh);
 		break;
 	}
@@ -139,6 +152,7 @@ bool Nodo::attachComponent(ComponentType type, Component * component) {
 		CompMesh * mesh = (CompMesh*)component;
 		mesh->setType(CMesh);
 		mesh->setModelMat(&_modelMat);
+		mesh->init(_renderer);
 		_components.push_back(mesh);
 		break;
 	}

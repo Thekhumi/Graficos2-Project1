@@ -46,6 +46,7 @@ public:
 	void AddChild(Nodo* newChild);
 	void RemoveChild(const char* name);
 	Nodo * getNodo(const char * name);
+	Nodo * getNodo(int num);
 	bool addComponent(ComponentType type);
 	bool attachComponent(ComponentType type, Component * component);
 	bool removeComponent(ComponentType type);
