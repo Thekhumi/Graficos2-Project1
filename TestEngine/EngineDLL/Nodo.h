@@ -17,6 +17,7 @@ private:
 	const char * _name;
 
 protected:
+	Rendering * _renderer;
 //transform
 	glm::vec3 _position;
 	glm::vec3 _rotation;
@@ -34,13 +35,13 @@ protected:
 		_modelMat = _translateMat * _rotateXMat * _rotateYMat * _rotateZMat * _scaleMat;
 	}
 public:
-	Nodo(const char * name);
+	Nodo(const char * name, Rendering * renderer);
 	void setName(const char * name) {
 		_name = name;
 	}
 	const  char * getName() { return _name; };
 	void update();
-	void draw() {};
+	void draw();
 	//Nodes
 	void AddChild(Nodo* newChild);
 	void RemoveChild(const char* name);

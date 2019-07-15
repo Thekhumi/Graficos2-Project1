@@ -44,6 +44,9 @@ public:
 	glm::mat4& getMVP() {
 		return _mvp;
 	}
+	glm::mat4 getModel() {
+		return _model;
+	}
 	Window getWindow() {
 		return * _window;
 	}

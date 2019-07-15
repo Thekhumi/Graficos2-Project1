@@ -4,7 +4,7 @@
 using namespace std;
 
 
-Nodo::Nodo(const char * name): _name(name){
+Nodo::Nodo(const char * name, Rendering * renderer): _name(name),_renderer(renderer){
 	_position[0] = _position[1] = _position[2] = 0.0f;
 	_rotation[0] = _rotation[1] = _rotation[2] = 0.0f;
 	_scale[0] = _scale[1] = _scale[2] = 1.0f;
@@ -18,14 +18,25 @@ Nodo::Nodo(const char * name): _name(name){
 }
 
 void Nodo::update() {
-	for (int i = 0; i < _nodes.size(); i++) {
-		_nodes[i]->update	();
-	}
 	for (int i = 0; i < _components.size(); i++) {
 		_components[i]->update();
 	}
+	for (int i = 0; i < _nodes.size(); i++) {
+		_nodes[i]->update();
+	}
 }
 
+void Nodo::draw() {
+	glm::mat4 currentModelMatrix = _renderer->getModel();
+	_renderer->multiplyMatrix(_modelMat);
+	for (int i = 0; i < _components.size(); i++) {
+		_components[i]->draw();
+	}
+	for (int i = 0; i < _nodes.size(); i++) {
+		_nodes[i]->draw();
+	}
+	_renderer->setMatrix(currentModelMatrix);
+}
 void Nodo::AddChild(Nodo* newChild) {
 	if (newChild == this) {
 		cout << "ERROR: El nodo es si mismo" << endl;

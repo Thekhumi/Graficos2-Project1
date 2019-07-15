@@ -15,13 +15,23 @@ Game::~Game()
 bool Game::onStart() {
 	cout << "-OnStart-" << endl;
 	//nodos
-	escena = new Nodo("Escena");
-	Nodo * camNodo = new Nodo("Camara");
-	Nodo * meshNodo = new Nodo("Mesh");
+	escena = new Nodo("Escena",_renderer);
+	Nodo * camNodo = new Nodo("Camara", _renderer);
+	Nodo * meshNodo = new Nodo("Mesh", _renderer);
+	//parenting test
+	Nodo * meshNodo2 = new Nodo("Mesh2", _renderer);
+	meshNodo2->setPosY(meshNodo2->getPosY() - 1.2f);
+	meshNodo2->setPosX(meshNodo2->getPosX() - 1.5f);
+
 	camNodo->addComponent(CCamera);
 	meshNodo->addComponent(CMesh);
+	
+	meshNodo2->addComponent(CMesh);
+
 	escena->AddChild(camNodo);
 	escena->AddChild(meshNodo);
+
+	meshNodo->AddChild(meshNodo2);
 	
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
 	//mesh = new Mesh(_renderer);
@@ -38,6 +48,12 @@ bool Game::onStart() {
 	meshC->setMaterial(mat);
 	meshC->loadModel("Cube.obj");
 	meshC->loadTexture("CubeTex.bmp", false);
+
+	meshC2 = (CompMesh*)meshNodo2->getComponent(CMesh);
+	meshC2->init(_renderer);
+	meshC2->setMaterial(mat);
+	meshC2->loadModel("Cube.obj");
+	meshC2->loadTexture("CubeTex.bmp", false);
 	
 	//(CompCamera*)camara->getComponent(CCamera)->setRenderer(_renderer);
 
@@ -49,12 +65,14 @@ bool Game::onStart() {
 
 bool Game::onUpdate(double deltaTime) {
 	camera->cameraInput(input(265), input(264), input(263), input(262), input(87), input(83), input(81), input(69), input(340), input(344), deltaTime);
+	Nodo * meshNodo = escena->getNodo("Mesh");
+	meshNodo->setPosX(meshNodo->getPosX() + 0.5f * deltaTime);
 	return true;
 }
 
 void Game::onDraw() {
 	//mesh->Draw();
-	meshC->draw();
+	escena->draw();
 }
 
 bool Game::onStop() {

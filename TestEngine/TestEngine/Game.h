@@ -24,6 +24,7 @@ private:
 	Mesh * mesh;
 	CompCamera * camera;
 	CompMesh * meshC;
+	CompMesh * meshC2;
 	Nodo * escena;
 protected:
 	bool onStart() override;

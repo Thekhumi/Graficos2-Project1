@@ -69,8 +69,8 @@ void CompMesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 
 void CompMesh::draw() {
 	if (_shouldDispose) {
-		_renderer->loadMatrix();
-		_renderer->setMatrix(*_modelMat);
+		//_renderer->loadMatrix();
+		//_renderer->setMatrix(*_modelMat);
 		if (_material)
 		{
 			_material->bind();
