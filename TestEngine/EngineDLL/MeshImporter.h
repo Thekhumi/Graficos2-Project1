@@ -4,15 +4,16 @@
 #include "assimp/scene.h"	
 #include "assimp/postprocess.h"
 #include "Mesh.h"
-#include "CompMesh.h"
+#include "Nodo.h"
 #include <iostream>
-using namespace Assimp;
+class ENGINEDLL_API Nodo;
 class ENGINEDLL_API MeshImporter
 {
 public:
 	MeshImporter();
-	bool static importModel(const char * path, float **_vertex, int & _vtxCount,
+	static bool importModelOld(const char * path, float **_vertex, int & _vtxCount,
 		unsigned int** _index, int & _indexCount, float ** _vertexUV, int & _vertexUVCount);
+	static void importModel(Nodo ** baseNode, const char * path, Rendering * renderer);
 	~MeshImporter();
 };
 

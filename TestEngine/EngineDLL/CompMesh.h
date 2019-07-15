@@ -37,8 +37,12 @@ public:
 	void loadTexture(const char * imagepath, bool hasAlphaC);
 	float * getVertex() { return _vertex; };
 	void setVertex(float * vertex) { _vertex = vertex; };
+	void setVertexCant(int vtxCount) { _vtxCount = vtxCount; };
+	void setVertexUV(float * vertexUV) { _vertexUV = vertexUV; };
+	void setvertexUVcant(int vtxUVcount) { _vertexUVCount = vtxUVcount; };
 	unsigned int * getIndex() { return _index; };
 	void setIndex(unsigned int * index) { _index = index; };
+	void setIndexCount(int indexCount) { _indexCount = indexCount; };
 	void setModelMat(glm::mat4 * modelMat) { _modelMat = modelMat; };
 	void setMaterial(Material * mat) { _material = mat; };
 	~CompMesh();

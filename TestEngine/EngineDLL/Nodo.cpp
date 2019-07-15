@@ -26,7 +26,7 @@ void Nodo::update() {
 	}
 }
 
-void Nodo::draw() {
+void Nodo::draw(){
 	glm::mat4 currentModelMatrix = _renderer->getModel();
 	_renderer->multiplyMatrix(_modelMat);
 	for (int i = 0; i < _components.size(); i++) {
@@ -121,6 +121,36 @@ bool Nodo::addComponent(ComponentType type) {
 	return true;
 }
 
+bool Nodo::attachComponent(ComponentType type, Component * component) {
+	if (getComponent(type) != NULL) {
+		cout << "COMPONENTE YA EXISTE" << endl;
+		return false;
+	}
+	switch (type) {
+	case CCamera:
+	{
+		CompCamera * camera = (CompCamera*)component;
+		camera->setType(CCamera);
+		_components.push_back(camera);
+		break;
+	}
+	case CMesh:
+	{
+		CompMesh * mesh = (CompMesh*)component;
+		mesh->setType(CMesh);
+		mesh->setModelMat(&_modelMat);
+		_components.push_back(mesh);
+		break;
+	}
+	default:
+	{
+		cout << "ERROR: Componente no programado" << endl;
+		return false;
+	}
+	}
+	cout << "Componente Agregado correctamente" << endl;
+	return true;
+}
 bool Nodo::removeComponent(ComponentType type) {
 	if (_components.size() == 0) {
 		cout << "ERROR: Nodo no tiene componentes" << endl;

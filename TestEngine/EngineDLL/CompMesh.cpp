@@ -69,8 +69,6 @@ void CompMesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 
 void CompMesh::draw() {
 	if (_shouldDispose) {
-		//_renderer->loadMatrix();
-		//_renderer->setMatrix(*_modelMat);
 		if (_material)
 		{
 			_material->bind();
@@ -99,7 +97,7 @@ void CompMesh::loadModel(const char * path) {
 		delete[] _index;
 	if (_vertexUV != NULL)
 		delete[] _vertexUV;
-	MeshImporter::importModel(path, &_vertex, _vtxCount, &_index, _indexCount, &_vertexUV, _vertexUVCount);
+	MeshImporter::importModelOld(path, &_vertex, _vtxCount, &_index, _indexCount, &_vertexUV, _vertexUVCount);
 	setVertices();
 }
 

@@ -95,7 +95,7 @@ void Mesh::loadModel(const char * path) {
 		delete[] _index;
 	if (_vertexUV != NULL)
 		delete[] _vertexUV;
-	MeshImporter::importModel(path, &_vertex,_vtxCount, &_index, _indexCount,&_vertexUV,_vertexUVCount);
+	MeshImporter::importModelOld(path, &_vertex,_vtxCount, &_index, _indexCount,&_vertexUV,_vertexUVCount);
 	setVertices();
 }
 Mesh::~Mesh()

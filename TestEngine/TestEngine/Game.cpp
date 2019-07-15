@@ -34,6 +34,9 @@ bool Game::onStart() {
 	meshNodo->AddChild(meshNodo2);
 	
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
+	MeshImporter::importModel(&meshImport,"Cube.obj",_renderer);
+	escena->AddChild(meshImport);
+	CompMesh * meshImp = (CompMesh*)meshImport->getComponent(CMesh);
 	//mesh = new Mesh(_renderer);
 	//mesh->setMaterial(mat);
 	//mesh->setScale(1, 1, 1);
@@ -44,6 +47,9 @@ bool Game::onStart() {
 	camera = (CompCamera*)camNodo->getComponent(CCamera);
 	camera->setRenderer(_renderer);
 	meshC = (CompMesh*)meshNodo->getComponent(CMesh);
+	meshImp->init(_renderer);
+	meshImp->setMaterial(mat);
+	meshImp->loadTexture("CubeTex.bmp", false);
 	meshC->init(_renderer);
 	meshC->setMaterial(mat);
 	meshC->loadModel("Cube.obj");
@@ -67,6 +73,7 @@ bool Game::onUpdate(double deltaTime) {
 	camera->cameraInput(input(265), input(264), input(263), input(262), input(87), input(83), input(81), input(69), input(340), input(344), deltaTime);
 	Nodo * meshNodo = escena->getNodo("Mesh");
 	meshNodo->setPosX(meshNodo->getPosX() + 0.5f * deltaTime);
+	meshImport->setPosY(meshImport->getPosY() + 0.5f * deltaTime);
 	return true;
 }
 
