@@ -67,7 +67,24 @@ void CompMesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 	_bufferUV = _renderer->genBuffer(_vertexUV, sizeof(float)* _vertexUVCount * 2);
 }
 
+bool CompMesh::frustrumVertexCheck() {
+	for (int i = 0; i < _vtxCount; i++) {
+		int count = i * 3;
+		vec3 vec = { _vertex[count], _vertex[1 + count], _vertex[2 + count] };
+		vec3 vecAux = mat3(_renderer->getModel()) * vec;
+		if (_renderer->pointInFrustrum(vecAux)) {
+			return true;
+		}
+	}
+	//is inside
+	return false;
+}
 void CompMesh::draw() {
+	if (!frustrumVertexCheck()) {
+		//cout << 0 << endl;
+		return;
+	}
+	//cout << 1 << endl;
 	if (_shouldDispose) {
 		if (_material)
 		{

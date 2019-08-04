@@ -45,6 +45,7 @@ public:
 	void setIndexCount(int indexCount) { _indexCount = indexCount; };
 	void setModelMat(glm::mat4 * modelMat) { _modelMat = modelMat; };
 	void setMaterial(Material * mat) { _material = mat; };
+	bool frustrumVertexCheck();
 	~CompMesh();
 };
 

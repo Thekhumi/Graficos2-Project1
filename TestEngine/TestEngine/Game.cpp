@@ -62,15 +62,15 @@ bool Game::onStart() {
 	meshC->setMaterial(mat);
 	meshC->loadModel("Cube.obj");
 	meshC->loadTexture("CubeTex.bmp", false);
-	//Son Cube
+	//child Cube
 	meshC2 = (CompMesh*)meshNodo2->getComponent(CMesh);
 	meshC2->setMaterial(mat);
 	meshC2->loadModel("Cube.obj");
 	meshC2->loadTexture("CubeTex.bmp", false);
 	
-	//	(CompCamera*)camNodo->getComponent(CCamera)->setRenderer(_renderer);
+	//(CompCamera*)camNodo->getComponent(CCamera)->setRenderer(_renderer);
 
-	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f/640.0f, 0.1f, 100.0f);
+	camera->setCamInternals(45.0f, 640.0f / 640.0f, 0.1f, 100.0f);
 	_renderer->setProjectionMatrixOrtho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
 	_renderer->setProjectionMode(Rendering::MODE::PERSPECTIVE);
 	return true;
