@@ -15,7 +15,7 @@ public:
 
 	void setPoints(vec3 &v1, vec3 &v2, vec3 &v3);
 	static vec3 cross(vec3 &v1, vec3 &v2);
-	float distance(vec3 &p);
+	float distance(vec4 &p);
 
 	void print();
 	~Plane();

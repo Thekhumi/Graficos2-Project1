@@ -33,17 +33,14 @@ void Plane::setPoints(vec3 &v1, vec3 &v2, vec3 &v3) {
 	_d = (innerProduct.x + innerProduct.y + innerProduct.z);
 }
 
-float Plane::distance(vec3 &p) {
-	vec3 innerProduct;
-	innerProduct.x = _normal.x * p.x;
-	innerProduct.y = _normal.y * p.y;
-	innerProduct.z = _normal.z * p.z;
-	float val = innerProduct.x + innerProduct.y + innerProduct.z + _d;
+float Plane::distance(vec4 &p) {
+	float innerProduct = (_normal.x * p.x) + (_normal.y * p.y) + (_normal.z * p.z);
+	float val =  _d  + innerProduct;
 	return (val);
 }
 
 void Plane::print() {
-	cout << "Plane: " << _normal.x << ", " << _normal.y << ", " << _normal.z << ". Dir: " << _d << endl;
+	cout << "Plane: " << _point.x << ", " << _point.y << ", " << _point.z << endl;
 }
 
 vec3 Plane::cross(vec3 &v1 ,vec3 &v2) {

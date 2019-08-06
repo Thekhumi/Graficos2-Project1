@@ -43,7 +43,7 @@ CompMesh::CompMesh():Component()
 	};
 	_vtxCount = 8;
 	_indexCount = 36;
-
+	_hasFrustrum = false;
 	_shouldDispose = false;
 }
 
@@ -68,23 +68,61 @@ void CompMesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 }
 
 bool CompMesh::frustrumVertexCheck() {
+	vec4 vec;
+	vec4 vecAux;
 	for (int i = 0; i < _vtxCount; i++) {
 		int count = i * 3;
-		vec3 vec = { _vertex[count], _vertex[1 + count], _vertex[2 + count] };
-		vec3 vecAux = mat3(_renderer->getModel()) * vec;
+		vec = { _vertex[count], _vertex[1 + count], _vertex[2 + count], 1.0f };
+		vecAux = _renderer->getModel() * vec;
 		if (_renderer->pointInFrustrum(vecAux)) {
 			return true;
 		}
 	}
+	
 	//is inside
 	return false;
 }
+
+void CompMesh::FboxSetUp() {
+	vec4 vec = { _vertex[0], _vertex[1], _vertex[2], 1};
+	_frustrumBox.minX = vec.x;
+	_frustrumBox.maxX = vec.x;
+	_frustrumBox.minY = vec.y;
+	_frustrumBox.maxY = vec.y;
+	_frustrumBox.minZ = vec.z;
+	_frustrumBox.maxZ = vec.z;
+	for (int i = 0; i < _vtxCount; i++){
+		int count = i * 3;
+		vec = { _vertex[count + 0], _vertex[count + 1], _vertex[count + 2], 1 };
+		//min
+		if (vec.x < _frustrumBox.minX) {
+			_frustrumBox.minX = vec.x;
+		}
+		if (vec.y < _frustrumBox.minY) {
+			_frustrumBox.minY = vec.y;
+		}
+		if (vec.z < _frustrumBox.minZ) {
+			_frustrumBox.minZ = vec.z;
+		}
+		//max
+		if (vec.x > _frustrumBox.maxX) {
+			_frustrumBox.maxX = vec.x;
+		}
+		if (vec.y > _frustrumBox.maxY) {
+			_frustrumBox.maxY = vec.y;
+		}
+		if (vec.z > _frustrumBox.maxZ) {
+			_frustrumBox.maxZ = vec.z;
+		}
+	}
+	_hasFrustrum = true;
+}
 void CompMesh::draw() {
 	if (!frustrumVertexCheck()) {
-		//cout << 0 << endl;
+		cout << 0 << endl;
 		return;
 	}
-	//cout << 1 << endl;
+	cout << 1 << endl;
 	if (_shouldDispose) {
 		if (_material)
 		{

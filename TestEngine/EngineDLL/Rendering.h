@@ -59,7 +59,7 @@ public:
 	void setProjectionMode(MODE mode);
 
 	//frustrum
-	int pointInFrustrum(vec3 &p);
+	bool pointInFrustrum(vec4 &p);
 	Rendering();
 	~Rendering();
 };

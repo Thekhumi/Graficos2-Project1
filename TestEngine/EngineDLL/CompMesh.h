@@ -6,6 +6,15 @@
 class ENGINEDLL_API CompMesh :
 	public Component
 {
+public:
+	struct Fbox {
+		float minX;
+		float minY;
+		float minZ;
+		float maxX;
+		float maxY;
+		float maxZ;
+	};
 private:
 	bool _shouldDispose;
 	Material* _material;
@@ -24,6 +33,8 @@ private:
 	unsigned int _bufferUV = -1;
 	unsigned int _bufferIDIndex = -1;
 	Texture * _texture;
+	Fbox _frustrumBox;
+	bool _hasFrustrum;
 
 public:
 	CompMesh();
@@ -45,7 +56,12 @@ public:
 	void setIndexCount(int indexCount) { _indexCount = indexCount; };
 	void setModelMat(glm::mat4 * modelMat) { _modelMat = modelMat; };
 	void setMaterial(Material * mat) { _material = mat; };
+	//Frustrum
+	void FboxSetUp();
 	bool frustrumVertexCheck();
+	bool frustrumBoxCheck();
+	Fbox getFbox() { return _frustrumBox; };
+	void setFbox(Fbox fBox) { _frustrumBox = fBox; }
 	~CompMesh();
 };
 

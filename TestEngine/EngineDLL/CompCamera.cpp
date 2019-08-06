@@ -154,16 +154,22 @@ void CompCamera::setCamDef() {
 	// the function set3Points assumes that the points
 	// are given in counter clockwise order
 	_renderer->pl[TOP].setPoints(ntr, ntl, ftl);
+	cout << "TOP: ";
 	_renderer->pl[TOP].print();
 	_renderer->pl[BOTTOM].setPoints(nbl, nbr, fbr);
+	cout << "BOTTOM: ";
 	_renderer->pl[BOTTOM].print();
 	_renderer->pl[LEFT].setPoints(ntl, nbl, fbl);
+	cout << "LEFT: ";
 	_renderer->pl[LEFT].print();
 	_renderer->pl[RIGHT].setPoints(nbr, ntr, fbr);
+	cout << "RIGHT: ";
 	_renderer->pl[RIGHT].print();
 	_renderer->pl[NEARP].setPoints(ntl, ntr, nbr);
+	cout << "NEARP: ";
 	_renderer->pl[NEARP].print();
 	_renderer->pl[FARP].setPoints(ftr, ftl, fbl);
+	cout << "FARP: ";
 	_renderer->pl[FARP].print();
 }
 

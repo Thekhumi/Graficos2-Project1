@@ -36,7 +36,7 @@ bool Game::onStart() {
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
 	//tank
 	MeshImporter::importModel(&NodoBody,"Tank.obj",_renderer);
-	escena->AddChild(NodoBody);
+	//escena->AddChild(NodoBody);
 	NodoBody->setScale(0.15f, 0.15f, 0.15f);
 
 	Body = (CompMesh*)NodoBody->getComponent(CMesh);
