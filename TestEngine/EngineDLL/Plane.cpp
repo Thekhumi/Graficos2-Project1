@@ -30,7 +30,7 @@ void Plane::setPoints(vec3 &v1, vec3 &v2, vec3 &v3) {
 	innerProduct.x = _normal.x * _point.x;
 	innerProduct.y = _normal.y * _point.y;
 	innerProduct.z = _normal.z * _point.z;
-	_d = (innerProduct.x + innerProduct.y + innerProduct.z);
+	_d = -(innerProduct.x + innerProduct.y + innerProduct.z);
 }
 
 float Plane::distance(vec4 &p) {

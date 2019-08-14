@@ -177,16 +177,6 @@ void Rendering::setProjectionMode(MODE mode) {
 	}
 	updateMVP();
 }
-bool Rendering::pointInFrustrum(vec4 &p) {
-	bool result = true;
-	
-	for (int i = 0; i < 6; i++) {
-		if (pl[i].distance(p) < 0) {
-			return false;
-		}
-	}
-	return(result);
-}
 
 Rendering::~Rendering()
 {

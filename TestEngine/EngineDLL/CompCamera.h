@@ -2,16 +2,11 @@
 #include "Component.h"
 #include "exports.h"
 #include "Rendering.h"
-#include "Plane.h"
 using namespace glm;
 
 class ENGINEDLL_API CompCamera : public Component
 {
 private:
-	enum{
-		TOP = 0, BOTTOM, LEFT,
-		RIGHT, NEARP, FARP
-	};
 
 
 	//directions
@@ -25,9 +20,6 @@ private:
 	Rendering * _renderer;
 
 public:
-	vec3 ntl, ntr, nbl, nbr, ftl, ftr, fbl, fbr;
-	float _nearDist, _farDist, _ratio, _angle, _tang;
-	float _nearWidth, _nearHeight, _farWidth, _farHight;
 
 	CompCamera();
 	void setRenderer(Rendering * rend) { _renderer = rend; };
@@ -39,9 +31,5 @@ public:
 	void update() override;
 	void cameraInput(bool up, bool down, bool left, bool right, bool w, bool s, bool q, bool e, bool lShift, bool rShift, double deltaTime);
 	~CompCamera();
-
-	//Frustum
-	void setCamInternals(float angle, float ratio, float nearD, float farD);
-	void setCamDef();
 };
 

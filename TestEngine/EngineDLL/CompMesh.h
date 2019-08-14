@@ -58,7 +58,6 @@ public:
 	void setMaterial(Material * mat) { _material = mat; };
 	//Frustrum
 	void FboxSetUp();
-	bool frustrumVertexCheck();
 	bool frustrumBoxCheck();
 	Fbox getFbox() { return _frustrumBox; };
 	void setFbox(Fbox fBox) { _frustrumBox = fBox; }

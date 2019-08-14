@@ -36,7 +36,7 @@ bool Game::onStart() {
 	Material * mat = Material::loadMaterial(TEXTURE_VERTEX_SHADER_PATH, TEXTURE_FRAGMENT_SHADER_PATH);
 	//tank
 	MeshImporter::importModel(&NodoBody,"Tank.obj",_renderer);
-	//escena->AddChild(NodoBody);
+	escena->AddChild(NodoBody);
 	NodoBody->setScale(0.15f, 0.15f, 0.15f);
 
 	Body = (CompMesh*)NodoBody->getComponent(CMesh);
@@ -70,7 +70,7 @@ bool Game::onStart() {
 	
 	//(CompCamera*)camNodo->getComponent(CCamera)->setRenderer(_renderer);
 
-	camera->setCamInternals(45.0f, 640.0f / 640.0f, 0.1f, 100.0f);
+	_renderer->setProjectiveMatrixPerspective(45.0f, 640.0f / 640.0f, 0.1f, 100.0f);
 	_renderer->setProjectionMatrixOrtho(-10.0f, 10.0f, -10.0f, 10.0f, 0.0f, 100.0f);
 	_renderer->setProjectionMode(Rendering::MODE::PERSPECTIVE);
 	return true;

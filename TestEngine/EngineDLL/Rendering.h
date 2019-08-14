@@ -2,7 +2,6 @@
 
 #include "Exports.h"
 #include "Window.h"
-#include "Plane.h"
 
 //include glm
 
@@ -24,8 +23,6 @@ private:
 	void updateMVP();
 public:
 	enum MODE {ORTHO, PERSPECTIVE};
-	static enum { OUTSIDE, INTERSECT, INSIDE };
-	Plane pl[6];
 
 	bool start(Window * window);
 	bool stop();
@@ -57,9 +54,6 @@ public:
 	void setProjectionMatrixOrtho(float left, float right, float bottom, float top, float zNear, float zFar);
 	void setProjectiveMatrixPerspective(float fovy, float aspect, float zNear, float zFar);
 	void setProjectionMode(MODE mode);
-
-	//frustrum
-	bool pointInFrustrum(vec4 &p);
 	Rendering();
 	~Rendering();
 };
