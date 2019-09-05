@@ -125,6 +125,13 @@ bool Nodo::addComponent(ComponentType type) {
 		_components.push_back(mesh);
 		break;
 	}
+	case CFBox:
+	{
+		CompFBox * fBox = new CompFBox();
+		fBox->setType(CFBox);
+		_components.push_back(fBox);
+		break;
+	}
 	default:
 	{
 		cout << "ERROR: Componente no programado" << endl;
@@ -156,6 +163,13 @@ bool Nodo::attachComponent(ComponentType type, Component * component) {
 		mesh->setModelMat(&_modelMat);
 		mesh->init(_renderer);
 		_components.push_back(mesh);
+		break;
+	}
+	case CFBox:
+	{
+		CompFBox * fBox = (CompFBox*)component;
+		fBox->setType(CFBox);
+		_components.push_back(fBox);
 		break;
 	}
 	default:

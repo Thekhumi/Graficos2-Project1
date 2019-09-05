@@ -1,7 +1,7 @@
 #pragma once
 #include "Exports.h"
 
-enum ComponentType { CCamera, CMesh };
+enum ComponentType { CCamera, CMesh, CFBox };
 class  ENGINEDLL_API Component
 {
 private:
