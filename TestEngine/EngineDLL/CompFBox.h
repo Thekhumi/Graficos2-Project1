@@ -13,6 +13,11 @@ private:
 public:
 	CompFBox();
 	void updateBox(float * minX, float * minY, float * minZ, float * maxX, float * maxY, float * maxZ, int count);
+	void clear();
+
+	//Component
+	void update();
+	void draw();
 	~CompFBox();
 };
 

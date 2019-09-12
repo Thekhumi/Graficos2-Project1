@@ -18,6 +18,7 @@ Nodo::Nodo(const char * name, Rendering * renderer): _name(name),_renderer(rende
 }
 
 void Nodo::update() {
+
 	for (int i = 0; i < _components.size(); i++) {
 		_components[i]->update();
 	}
