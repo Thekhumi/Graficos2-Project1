@@ -12,7 +12,7 @@ private:
 	float _maxZ;
 public:
 	CompFBox();
-	void updateBox(float * minX, float * minY, float * minZ, float * maxX, float * maxY, float * maxZ, int count);
+	void updateBox(float  minX, float  minY, float  minZ, float  maxX, float  maxY, float  maxZ);
 	void clear();
 
 	//Component

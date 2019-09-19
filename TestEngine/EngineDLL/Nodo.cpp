@@ -103,6 +103,14 @@ Nodo * Nodo::getNodo(int num) {
 	}
 	return _nodes[num];
 }
+void Nodo::updateFrustumChilds() {
+	CompFBox * tempBox;
+	tempBox = (CompFBox*)getComponent(CFBox);
+	if (tempBox != NULL) {
+
+	}
+}
+
 bool Nodo::addComponent(ComponentType type) {
 	if (getComponent(type) != NULL) {
 		cout << "COMPONENTE YA EXISTE" << endl;
@@ -216,3 +224,4 @@ Nodo::~Nodo(){
 	}
 	cout << "nodo eliminado" << endl;
 }
+

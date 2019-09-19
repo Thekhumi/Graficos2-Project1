@@ -76,6 +76,36 @@ void CompMesh::frustumUpdate() {
 		yValue[i] = _vertex[1 + i * 3];
 		zValue[i] = _vertex[2 + i * 3];
 	}
+	float minX = xValue[0];
+	float minY = yValue[0];
+	float minZ = zValue[0];
+	float maxX = xValue[0];
+	float maxY = yValue[0];
+	float maxZ = zValue[0];
+	for (int i = 1; i < _vtxCount; i++) {
+		//X
+		if (minX > xValue[i]) {
+			minX = xValue[i];
+		}
+		if (maxX < xValue[i]) {
+			maxX = xValue[i];
+		}
+		//Y
+		if (minY > yValue[i]) {
+			minY = yValue[i];
+		}
+		if (maxY < yValue[i]) {
+			maxY = yValue[i];
+		}
+		//Z
+		if (minZ > zValue[i]) {
+			minZ = zValue[i];
+		}
+		if (maxZ < zValue[i]) {
+			maxZ = zValue[i];
+		}
+		_frustumBox->updateBox(minX, minY, minZ, maxX, maxY, maxZ);
+	}
 }
 void CompMesh::draw() {
 	if (_shouldDispose) {
@@ -111,6 +141,11 @@ void CompMesh::loadModel(const char * path) {
 	setVertices();
 }
 
+void CompMesh::update() {
+	if (_frustumBox) {
+		frustumUpdate();
+	}
+}
 
 CompMesh::~CompMesh()
 {

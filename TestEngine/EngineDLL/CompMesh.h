@@ -32,7 +32,7 @@ private:
 public:
 	CompMesh();
 	void draw() override;
-	void update() override {};
+	void update() override;
 
 	//mesh
 	void init(Rendering * renderer);

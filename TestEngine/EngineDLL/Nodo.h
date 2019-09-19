@@ -52,8 +52,9 @@ public:
 	bool attachComponent(ComponentType type, Component * component);
 	bool removeComponent(ComponentType type);
 	Component * getComponent(ComponentType type);
-
-
+	
+	//frustum
+	void updateFrustumChilds();
 
 	//transform
 	void setScale(float x, float y, float z) {
@@ -132,7 +133,6 @@ public:
 	glm::vec3 getRotation() {
 		return _rotation;
 	}
-
 	~Nodo();
 };
 
