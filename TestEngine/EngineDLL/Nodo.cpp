@@ -25,6 +25,8 @@ void Nodo::update() {
 	for (int i = 0; i < _nodes.size(); i++) {
 		_nodes[i]->update();
 	}
+
+	updateFrustumChilds();
 }
 
 void Nodo::draw(){
@@ -103,11 +105,17 @@ Nodo * Nodo::getNodo(int num) {
 	}
 	return _nodes[num];
 }
+
 void Nodo::updateFrustumChilds() {
 	CompFBox * tempBox;
 	tempBox = (CompFBox*)getComponent(CFBox);
 	if (tempBox != NULL) {
-
+		for (int i = 0; i < _nodes.size(); i++){
+			CompMesh * mesh = (CompMesh*)_nodes[i]->getComponent(CMesh);
+			if (mesh != NULL) {
+				mesh->frustumUpdate(tempBox);
+			}
+		}
 	}
 }
 

@@ -51,7 +51,7 @@ public:
 	void setMaterial(Material * mat) { _material = mat; };
 
 	//Fbox
-	void frustumUpdate();
+	void frustumUpdate(CompFBox * frustumBox);
 	CompFBox * getFbox() { return _frustumBox; };
 	void setFbox(CompFBox * fBox) { _frustumBox = fBox; }
 	~CompMesh();

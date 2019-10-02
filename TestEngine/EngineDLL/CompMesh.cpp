@@ -67,7 +67,7 @@ void CompMesh::loadTexture(const char * imagepath, bool hasAlphaC) {
 	_bufferUV = _renderer->genBuffer(_vertexUV, sizeof(float)* _vertexUVCount * 2);
 }
 
-void CompMesh::frustumUpdate() {
+void CompMesh::frustumUpdate(CompFBox * frustumBox) {
 	float * xValue = new float[_vtxCount];
 	float * yValue = new float[_vtxCount];
 	float * zValue = new float[_vtxCount];
@@ -104,7 +104,7 @@ void CompMesh::frustumUpdate() {
 		if (maxZ < zValue[i]) {
 			maxZ = zValue[i];
 		}
-		_frustumBox->updateBox(minX, minY, minZ, maxX, maxY, maxZ);
+		frustumBox->updateBox(minX, minY, minZ, maxX, maxY, maxZ);
 	}
 }
 void CompMesh::draw() {
@@ -143,7 +143,7 @@ void CompMesh::loadModel(const char * path) {
 
 void CompMesh::update() {
 	if (_frustumBox) {
-		frustumUpdate();
+		frustumUpdate(_frustumBox);
 	}
 }
 
